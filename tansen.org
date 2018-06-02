@@ -91,7 +91,7 @@
 #+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
 
 - *Base speed:* 30.
-- When unarmored, speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+- Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 
 ** Health
 
