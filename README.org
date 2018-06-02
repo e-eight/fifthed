@@ -1,0 +1,3 @@
+My D&D character sheet, using org-mode and fniessen's [[https://github.com/fniessen/org-html-themes][ReadTheOrg]] theme.
+Partially inspired by VK3FNG's [[https://github.com/VK3FNG/dnd5e-orgmode-charsheet][character sheet template]]. Feel free to fork and
+adapt it for your own use.

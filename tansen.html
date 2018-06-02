@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-01 Fri 23:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tansen</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tansen</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcb79d6a">1. Basic Information</a></li>
+<li><a href="#org242dbdf">2. Attributes and Skills</a>
+<ul>
+<li><a href="#org486afa8">2.1. Saving Throws</a></li>
+<li><a href="#orgf240f67">2.2. Skills</a></li>
+<li><a href="#org746666c">2.3. Other Proficienies and Languages</a>
+<ul>
+<li><a href="#orgd041712">2.3.1. Languages Known</a></li>
+<li><a href="#org9a744c8">2.3.2. Tool Proficiencies</a></li>
+<li><a href="#org9bad8b1">2.3.3. Weapon Proficiencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0ef0148">3. Combat</a>
+<ul>
+<li><a href="#org73555a0">3.1. Defense</a></li>
+<li><a href="#org8bc92e4">3.2. Health</a>
+<ul>
+<li><a href="#org6a60ec9">3.2.1. Hit Dice</a></li>
+</ul>
+</li>
+<li><a href="#orgdbc52dd">3.3. Weapons</a></li>
+<li><a href="#org3a45050">3.4. Ki</a>
+<ul>
+<li><a href="#org6d13154">3.4.1. Ki features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3585f6f">4. Equipment</a></li>
+<li><a href="#org8ed5a4c">5. Features</a>
+<ul>
+<li><a href="#org5062c2e">5.1. Dragonborn features</a></li>
+<li><a href="#org9453684">5.2. City Watch features</a></li>
+<li><a href="#org5af5e44">5.3. Monk features</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcb79d6a" class="outline-2">
+<h2 id="orgcb79d6a"><span class="section-number-2">1</span> Basic Information</h2>
+<div class="outline-text-2" id="text-1">
+<table id="orgd9ca0d7" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Race</th>
+<th scope="col" class="org-left">Class</th>
+<th scope="col" class="org-left">Background</th>
+<th scope="col" class="org-left">Alignment</th>
+<th scope="col" class="org-right">Level</th>
+<th scope="col" class="org-left">XP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Dragonborn</td>
+<td class="org-left">Monk</td>
+<td class="org-left">City Watch</td>
+<td class="org-left">Lawful Good</td>
+<td class="org-right">2</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org242dbdf" class="outline-2">
+<h2 id="org242dbdf"><span class="section-number-2">2</span> Attributes and Skills</h2>
+<div class="outline-text-2" id="text-2">
+<table id="orgfe44937" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Score</th>
+<th scope="col" class="org-right">Modifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Strength</td>
+<td class="org-right">18</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-left">Dexterity</td>
+<td class="org-right">18</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-left">Constitution</td>
+<td class="org-right">16</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Intelligence</td>
+<td class="org-right">11</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">Wisdom</td>
+<td class="org-right">16</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">Charisma</td>
+<td class="org-right">17</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table>
+
+<table id="orga54fb2a" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Inspiration</td>
+<td class="org-right">Proficiency</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org486afa8" class="outline-3">
+<h3 id="org486afa8"><span class="section-number-3">2.1</span> Saving Throws</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Strength</li>
+<li>Dexterity</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf240f67" class="outline-3">
+<h3 id="orgf240f67"><span class="section-number-3">2.2</span> Skills</h3>
+<div class="outline-text-3" id="text-2-2">
+<table id="orgf7b9b62" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Attribute</th>
+<th scope="col" class="org-left">Proficient?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Athletics</td>
+<td class="org-left">Strength</td>
+<td class="org-left">Y</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Acrobatics</td>
+<td class="org-left">Dexterity</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Sleight of Hand</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Stealth</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Y</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Aracana</td>
+<td class="org-left">Intelligence</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">History</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">Investigation</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Nature</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Religion</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Animal Handling</td>
+<td class="org-left">Wisdom</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Insight</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">Medicine</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Perception</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Survival</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Deception</td>
+<td class="org-left">Charisma</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Intimidation</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Performance</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Persuasion</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org746666c" class="outline-3">
+<h3 id="org746666c"><span class="section-number-3">2.3</span> Other Proficienies and Languages</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgd041712" class="outline-4">
+<h4 id="orgd041712"><span class="section-number-4">2.3.1</span> Languages Known</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>Draconic</li>
+<li>Common</li>
+<li>Dwarvish</li>
+<li>Gnomish</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9a744c8" class="outline-4">
+<h4 id="org9a744c8"><span class="section-number-4">2.3.2</span> Tool Proficiencies</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>Artisan's tools</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9bad8b1" class="outline-4">
+<h4 id="org9bad8b1"><span class="section-number-4">2.3.3</span> Weapon Proficiencies</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>Simple weapons</li>
+<li>Shortswords</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ef0148" class="outline-2">
+<h2 id="org0ef0148"><span class="section-number-2">3</span> Combat</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org73555a0" class="outline-3">
+<h3 id="org73555a0"><span class="section-number-3">3.1</span> Defense</h3>
+<div class="outline-text-3" id="text-3-1">
+<table id="org9186e35" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Armor Class (Unarmored)</th>
+<th scope="col" class="org-right">Initiative</th>
+<th scope="col" class="org-right">Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">17</td>
+<td class="org-right">4</td>
+<td class="org-right">40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org8bc92e4" class="outline-3">
+<h3 id="org8bc92e4"><span class="section-number-3">3.2</span> Health</h3>
+<div class="outline-text-3" id="text-3-2">
+<table id="org61db150" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Hit Point Maximum</th>
+<th scope="col" class="org-right">Current Hit Points</th>
+<th scope="col" class="org-left">Temp Hit Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">11</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org6a60ec9" class="outline-4">
+<h4 id="org6a60ec9"><span class="section-number-4">3.2.1</span> Hit Dice</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<table id="org74544cc" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Type</th>
+<th scope="col" class="org-right">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1d8</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc52dd" class="outline-3">
+<h3 id="orgdbc52dd"><span class="section-number-3">3.3</span> Weapons</h3>
+<div class="outline-text-3" id="text-3-3">
+<table id="org1cc6c5a" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Strength Modifier</th>
+<th scope="col" class="org-right">Dexterity Mod</th>
+<th scope="col" class="org-right">Proficiency Bonus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>When attacking with monk weapons or unarmed strike can use either Strength, or
+Dexterity to attack and damage</li>
+<li>Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
+action.</li>
+<li>Can roll a d4 in place of the normal damage of unarmed strike or monk
+weapon. This die can change with gaining of monk levels. Check martial arts
+column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
+<li>Proficient in monk weapons and unarmed strike.</li>
+</ul>
+
+<table id="org55a7d9e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Weapons</th>
+<th scope="col" class="org-left">Proficient?</th>
+<th scope="col" class="org-right">Base Damage</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Spear</td>
+<td class="org-left">Y</td>
+<td class="org-right">1d6</td>
+<td class="org-left">Piercing</td>
+<td class="org-left">20/60</td>
+</tr>
+
+<tr>
+<td class="org-left">Dart</td>
+<td class="org-left">Y</td>
+<td class="org-right">1d4</td>
+<td class="org-left">Piercing</td>
+<td class="org-left">20/60</td>
+</tr>
+
+<tr>
+<td class="org-left">Unarmed Strike</td>
+<td class="org-left">Y</td>
+<td class="org-right">1d4</td>
+<td class="org-left">Bludgeon</td>
+<td class="org-left">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org3a45050" class="outline-3">
+<h3 id="org3a45050"><span class="section-number-3">3.4</span> Ki</h3>
+<div class="outline-text-3" id="text-3-4">
+<table id="org10c4d1c" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Ki Points</th>
+<th scope="col" class="org-right">Ki Save DC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">13</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org6d13154" class="outline-4">
+<h4 id="org6d13154"><span class="section-number-4">3.4.1</span> Ki features</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>Flurry of Blows: Immediately after attack, use 1 ki point to make two unarmed
+strikes as a bonus action.</li>
+<li>Patient Defense: Use 1 ki point to take the dodge action as bonus action on
+own turn.</li>
+<li>Step of the Wind: Use 1 ki point to disengage or dash as a bonus action on own
+turn. Jump distance is doubled for the turn.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3585f6f" class="outline-2">
+<h2 id="org3585f6f"><span class="section-number-2">4</span> Equipment</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Spear</li>
+<li>Dart × 10</li>
+<li>Dungeoneer's Pack
+<ul class="org-ul">
+<li>Backpack</li>
+<li>Crowbar</li>
+<li>Hammer</li>
+<li>Pitons × 10</li>
+<li>Torches × 10</li>
+<li>Tinderbox</li>
+<li>Ration × 10 days</li>
+<li>Waterskin</li>
+<li>Hempen rope - 50 feet</li>
+</ul></li>
+<li>Uniform</li>
+<li>Horn</li>
+<li>Set of manacles</li>
+<li>Pouch</li>
+</ul>
+
+<table id="org0a8272a" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">PP</th>
+<th scope="col" class="org-right">GP</th>
+<th scope="col" class="org-left">EP</th>
+<th scope="col" class="org-left">SP</th>
+<th scope="col" class="org-left">CP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org8ed5a4c" class="outline-2">
+<h2 id="org8ed5a4c"><span class="section-number-2">5</span> Features</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org5062c2e" class="outline-3">
+<h3 id="org5062c2e"><span class="section-number-3">5.1</span> Dragonborn features</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Red Dragon.</li>
+<li>Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
+dealing 2d6 fire damage, Dexterity save for half damage. DC  = 8 +
+Constitution Modifier + Proficiency.</li>
+<li>Resist fire damage.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9453684" class="outline-3">
+<h3 id="org9453684"><span class="section-number-3">5.2</span> City Watch features</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Have a knack for finding crime dens and constabularies.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5af5e44" class="outline-3">
+<h3 id="org5af5e44"><span class="section-number-3">5.3</span> Monk features</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Wisdom modifier added to AC when unarmoured, and not carrying a shield.</li>
+<li>Can use dexterity for attack and damage when unarmed or using monk
+weapons.</li>
+<li>Can roll a d4 in place of the normal damage of unarmed strike or monk
+weapon. This die can change with gaining of monk levels. Check martial arts
+column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
+<li>Can make an unarmed attack as a bonus action when unarmed or using monk
+weapons.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2018-06-01 Fri 23:52</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

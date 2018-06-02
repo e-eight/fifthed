@@ -1,0 +1,197 @@
+#+TITLE: Tansen
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+
+
+* Basic Information
+#+NAME: BASICINFO
+#+ATTR_HTML: :border 2 :rules all :frame border
+| Race       | Class | Background | Alignment   | Level | XP |
+|------------+-------+------------+-------------+-------+----|
+| Dragonborn | Monk  | City Watch | Lawful Good |     2 |    |
+
+* Attributes and Skills
+#+NAME: Attributes
+#+ATTR_HTML: :border 2 :rules all :frame border
+|              | Score | Modifier |
+|--------------+-------+----------|
+| Strength     |    18 |        4 |
+| Dexterity    |    18 |        4 |
+| Constitution |    16 |        3 |
+| Intelligence |    11 |        0 |
+| Wisdom       |    16 |        3 |
+| Charisma     |    17 |        3 |
+#+TBLFM: $3=floor(($2-10)/2)
+
+#+NAME: Prof
+#+ATTR_HTML: :border 2 :rules all :frame border
+| Inspiration | Proficiency |
+|             |           2 |
+
+** Saving Throws
+- Strength
+- Dexterity
+
+** Skills
+#+NAME: Skills
+#+ATTR_HTML: :border 2 :frame border
+|                 | Attribute    | Proficient? |
+|-----------------+--------------+-------------|
+| Athletics       | Strength     | Y           |
+|-----------------+--------------+-------------|
+| Acrobatics      | Dexterity    |             |
+| Sleight of Hand |              |             |
+| Stealth         |              | Y           |
+|-----------------+--------------+-------------|
+| Aracana         | Intelligence |             |
+| History         |              | Y           |
+| Investigation   |              |             |
+| Nature          |              |             |
+| Religion        |              |             |
+|-----------------+--------------+-------------|
+| Animal Handling | Wisdom       |             |
+| Insight         |              | Y           |
+| Medicine        |              |             |
+| Perception      |              |             |
+| Survival        |              |             |
+|-----------------+--------------+-------------|
+| Deception       | Charisma     |             |
+| Intimidation    |              |             |
+| Performance     |              |             |
+| Persuasion      |              |             |
+
+** Other Proficienies and Languages
+
+*** Languages Known
+- Draconic
+- Common
+- Dwarvish
+- Gnomish
+
+*** Tool Proficiencies
+- Artisan's tools
+
+*** Weapon Proficiencies
+- Simple weapons
+- Shortswords
+
+* Combat
+
+** Defense
+
+#+NAME: Defense
+#+ATTR_HTML: :border 2 :frame border :rules all
+| Armor Class (Unarmored) | Initiative | Speed |
+|-------------------------+------------+-------|
+|                      17 |          4 |    40 |
+#+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
+
+** Health
+
+#+NAME: Health
+#+ATTR_HTML: :border 2 :frame border :rules all
+| Hit Point Maximum | Current Hit Points | Temp Hit Point |
+|-------------------+--------------------+----------------|
+|                11 |                 11 |                |
+
+*** Hit Dice
+
+#+NAME: HD
+#+ATTR_HTML: :border 2 :frame border :rules all
+| Type | Number |
+|------+--------|
+|  1d8 |      2 |
+
+** Weapons
+
+#+NAME: ImpMod
+#+ATTR_HTML: :border 2 :frame border :rules all
+| Strength Modifier | Dexterity Mod | Proficiency Bonus |
+|-------------------+---------------+-------------------|
+|                 4 |             4 |                 2 |
+#+TBLFM: @2$1=remote(Attributes,@2$3)::@2$2=remote(Attributes,@3$3)::@2$3=remote(Prof,@2$2)
+
+- When attacking with monk weapons or unarmed strike can use either Strength, or
+  Dexterity to attack and damage
+- Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
+  action.
+- Can roll a d4 in place of the normal damage of unarmed strike or monk
+  weapon. This die can change with gaining of monk levels. Check martial arts
+  column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+- Proficient in monk weapons and unarmed strike.
+
+#+NAME: Weapons
+#+ATTR_HTML: :border 2 :frame border
+| Weapons        | Proficient? | Base Damage | Type     | Range |
+|----------------+-------------+-------------+----------+-------|
+| Spear          | Y           |         1d6 | Piercing | 20/60 |
+| Dart           | Y           |         1d4 | Piercing | 20/60 |
+| Unarmed Strike | Y           |         1d4 | Bludgeon | 5     |
+#+TBLFM: @4$2=remote(Attributes,@3$3)
+
+** Ki
+
+#+NAME: Ki
+#+ATTR_HTML: :border 2 :frame border :rules all
+| Ki Points | Ki Save DC |
+|-----------+------------|
+|         3 |         13 |
+#+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
+
+*** Ki features
+- Flurry of Blows: Immediately after attack, use 1 ki point to make two unarmed
+  strikes as a bonus action.
+- Patient Defense: Use 1 ki point to take the dodge action as bonus action on
+  own turn.
+- Step of the Wind: Use 1 ki point to disengage or dash as a bonus action on own
+  turn. Jump distance is doubled for the turn.
+
+* Equipment
+- Spear
+- Dart × 10
+- Dungeoneer's Pack
+  + Backpack
+  + Crowbar
+  + Hammer
+  + Pitons × 10
+  + Torches × 10
+  + Tinderbox
+  + Ration × 10 days
+  + Waterskin
+  + Hempen rope - 50 feet
+- Uniform
+- Horn
+- Set of manacles
+- Pouch
+
+#+NAME: Coin
+#+ATTR_HTML: :border 2 :frame border :rules all
+| PP | GP | EP | SP | CP |
+|----+----+----+----+----|
+|    | 10 |    |    |    |
+
+* Features
+
+** Dragonborn features
+- Red Dragon.
+- Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
+  dealing 2d6 fire damage, Dexterity save for half damage. DC  = 8 +
+  Constitution Modifier + Proficiency.
+- Resist fire damage.
+
+** City Watch features
+- Have a knack for finding crime dens and constabularies.
+
+** Monk features
+- Wisdom modifier added to AC when unarmoured, and not carrying a shield.
+- Can use dexterity for attack and damage when unarmed or using monk
+  weapons. 
+- Can roll a d4 in place of the normal damage of unarmed strike or monk
+  weapon. This die can change with gaining of monk levels. Check martial arts
+  column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+- Can make an unarmed attack as a bonus action when unarmed or using monk
+  weapons.
