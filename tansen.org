@@ -96,7 +96,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point |
 |-------------------+--------------------+----------------|
-|                11 |                 11 |                |
+|                17 |                 17 |                |
 
 *** Hit Dice
 
@@ -139,7 +139,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points | Ki Save DC |
 |-----------+------------|
-|         3 |         13 |
+|         2 |         13 |
 #+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 *** Ki features
