@@ -143,11 +143,11 @@
 #+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 *** Ki features
-- Flurry of Blows: Immediately after attack, use 1 ki point to make two unarmed
+- *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
   strikes as a bonus action.
-- Patient Defense: Use 1 ki point to take the dodge action as bonus action on
+- *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
   own turn.
-- Step of the Wind: Use 1 ki point to disengage or dash as a bonus action on own
+- *Step of the Wind:* Use 1 ki point to disengage or dash as a bonus action on own
   turn. Jump distance is doubled for the turn.
 
 * Equipment
