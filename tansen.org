@@ -12,7 +12,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Race       | Class | Background | Alignment   | Level | XP |
 |------------+-------+------------+-------------+-------+----|
-| Dragonborn | Monk  | City Watch | Lawful Good |     2 |    |
+| Dragonborn | Monk  | City Watch | Lawful Good |     3 |    |
 
 * Attributes and Skills
 #+NAME: Attributes
@@ -99,7 +99,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point |
 |-------------------+--------------------+----------------|
-|                17 |                 17 |                |
+|                25 |                 25 |                |
 
 *** Hit Dice
 
@@ -107,7 +107,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Type | Number |
 |------+--------|
-|  1d8 |      2 |
+|  1d8 |      3 |
 
 ** Weapons
 
@@ -142,7 +142,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points | Ki Save DC |
 |-----------+------------|
-|         2 |         13 |
+|         3 |         13 |
 #+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 *** Ki features
@@ -176,7 +176,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | PP | GP | EP | SP | CP |
 |----+----+----+----+----|
-|    | 10 |    |    |    |
+|    | 71 |    |    |    |
 
 * Features
 
@@ -203,4 +203,4 @@
 * Backstory
 
 #+INCLUDE: "./backstory.org"
-
+  

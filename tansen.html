@@ -3,29 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-02 Sat 13:54 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tansen</title>
-<meta name="generator" content="Org mode" />
+<!-- 2018-06-02 Sat 23:53 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="soham" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -52,111 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
@@ -190,7 +99,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -239,449 +148,458 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org00073bb">1. Basic Information</a></li>
-<li><a href="#org2ce7c34">2. Attributes and Skills</a>
+<li><a href="#sec-1">1. Basic Information</a></li>
+<li><a href="#sec-2">2. Attributes and Skills</a>
 <ul>
-<li><a href="#orgf00359d">2.1. Saving Throws</a></li>
-<li><a href="#orgaf78c70">2.2. Skills</a></li>
-<li><a href="#orgdcfc6ba">2.3. Other Proficienies and Languages</a>
+<li><a href="#sec-2-1">2.1. Saving Throws</a></li>
+<li><a href="#sec-2-2">2.2. Skills</a></li>
+<li><a href="#sec-2-3">2.3. Other Proficienies and Languages</a>
 <ul>
-<li><a href="#org528125e">2.3.1. Languages Known</a></li>
-<li><a href="#orge552562">2.3.2. Tool Proficiencies</a></li>
-<li><a href="#org7f66d6d">2.3.3. Weapon Proficiencies</a></li>
+<li><a href="#sec-2-3-1">2.3.1. Languages Known</a></li>
+<li><a href="#sec-2-3-2">2.3.2. Tool Proficiencies</a></li>
+<li><a href="#sec-2-3-3">2.3.3. Weapon Proficiencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org931add6">3. Combat</a>
+<li><a href="#sec-3">3. Combat</a>
 <ul>
-<li><a href="#orgc659b12">3.1. Defense</a></li>
-<li><a href="#org5a109e6">3.2. Health</a>
+<li><a href="#sec-3-1">3.1. Defense</a></li>
+<li><a href="#sec-3-2">3.2. Health</a>
 <ul>
-<li><a href="#org78aa065">3.2.1. Hit Dice</a></li>
+<li><a href="#sec-3-2-1">3.2.1. Hit Dice</a></li>
 </ul>
 </li>
-<li><a href="#org4b37621">3.3. Weapons</a></li>
-<li><a href="#orgb597506">3.4. Ki</a>
+<li><a href="#sec-3-3">3.3. Weapons</a></li>
+<li><a href="#sec-3-4">3.4. Ki</a>
 <ul>
-<li><a href="#org645df04">3.4.1. Ki features</a></li>
+<li><a href="#sec-3-4-1">3.4.1. Ki features</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4316337">4. Equipment</a></li>
-<li><a href="#orgd97d556">5. Features</a>
+<li><a href="#sec-4">4. Equipment</a></li>
+<li><a href="#sec-5">5. Features</a>
 <ul>
-<li><a href="#orgf28034d">5.1. Dragonborn features</a></li>
-<li><a href="#org3cae7d6">5.2. City Watch features</a></li>
-<li><a href="#orge4be3e9">5.3. Monk features</a></li>
+<li><a href="#sec-5-1">5.1. Dragonborn features</a></li>
+<li><a href="#sec-5-2">5.2. City Watch features</a></li>
+<li><a href="#sec-5-3">5.3. Monk features</a></li>
 </ul>
 </li>
-<li><a href="#org4085b7f">6. Backstory</a></li>
+<li><a href="#sec-6">6. Backstory</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org00073bb" class="outline-2">
-<h2 id="org00073bb"><span class="section-number-2">1</span> Basic Information</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Basic Information</h2>
 <div class="outline-text-2" id="text-1">
-<table id="orgd4b3da2" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="BASICINFO" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">Race</th>
-<th scope="col" class="org-left">Class</th>
-<th scope="col" class="org-left">Background</th>
-<th scope="col" class="org-left">Alignment</th>
-<th scope="col" class="org-right">Level</th>
-<th scope="col" class="org-left">XP</th>
+<th scope="col" class="left">Race</th>
+<th scope="col" class="left">Class</th>
+<th scope="col" class="left">Background</th>
+<th scope="col" class="left">Alignment</th>
+<th scope="col" class="right">Level</th>
+<th scope="col" class="left">XP</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Dragonborn</td>
-<td class="org-left">Monk</td>
-<td class="org-left">City Watch</td>
-<td class="org-left">Lawful Good</td>
-<td class="org-right">2</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Dragonborn</td>
+<td class="left">Monk</td>
+<td class="left">City Watch</td>
+<td class="left">Lawful Good</td>
+<td class="right">3</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-org2ce7c34" class="outline-2">
-<h2 id="org2ce7c34"><span class="section-number-2">2</span> Attributes and Skills</h2>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Attributes and Skills</h2>
 <div class="outline-text-2" id="text-2">
-<table id="org972b915" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Attributes" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-right">Score</th>
-<th scope="col" class="org-right">Modifier</th>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="right">Score</th>
+<th scope="col" class="right">Modifier</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Strength</td>
-<td class="org-right">18</td>
-<td class="org-right">4</td>
+<td class="left">Strength</td>
+<td class="right">18</td>
+<td class="right">4</td>
 </tr>
 
 <tr>
-<td class="org-left">Dexterity</td>
-<td class="org-right">18</td>
-<td class="org-right">4</td>
+<td class="left">Dexterity</td>
+<td class="right">18</td>
+<td class="right">4</td>
 </tr>
 
 <tr>
-<td class="org-left">Constitution</td>
-<td class="org-right">16</td>
-<td class="org-right">3</td>
+<td class="left">Constitution</td>
+<td class="right">16</td>
+<td class="right">3</td>
 </tr>
 
 <tr>
-<td class="org-left">Intelligence</td>
-<td class="org-right">11</td>
-<td class="org-right">0</td>
+<td class="left">Intelligence</td>
+<td class="right">11</td>
+<td class="right">0</td>
 </tr>
 
 <tr>
-<td class="org-left">Wisdom</td>
-<td class="org-right">16</td>
-<td class="org-right">3</td>
+<td class="left">Wisdom</td>
+<td class="right">16</td>
+<td class="right">3</td>
 </tr>
 
 <tr>
-<td class="org-left">Charisma</td>
-<td class="org-right">17</td>
-<td class="org-right">3</td>
+<td class="left">Charisma</td>
+<td class="right">17</td>
+<td class="right">3</td>
 </tr>
 </tbody>
 </table>
 
-<table id="org30fe96c" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Prof" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left">Inspiration</td>
-<td class="org-right">Proficiency</td>
+<td class="left">Inspiration</td>
+<td class="right">Proficiency</td>
 </tr>
 
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-right">2</td>
+<td class="left">&#xa0;</td>
+<td class="right">2</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="outline-container-orgf00359d" class="outline-3">
-<h3 id="orgf00359d"><span class="section-number-3">2.1</span> Saving Throws</h3>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Saving Throws</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
-<li>Strength</li>
-<li>Dexterity</li>
+<li>Strength
+</li>
+<li>Dexterity
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaf78c70" class="outline-3">
-<h3 id="orgaf78c70"><span class="section-number-3">2.2</span> Skills</h3>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Skills</h3>
 <div class="outline-text-3" id="text-2-2">
-<table id="orga166b3d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<table id="Skills" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-left">Attribute</th>
-<th scope="col" class="org-left">Proficient?</th>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">Attribute</th>
+<th scope="col" class="left">Proficient?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Athletics</td>
-<td class="org-left">Strength</td>
-<td class="org-left">Y</td>
+<td class="left">Athletics</td>
+<td class="left">Strength</td>
+<td class="left">Y</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Acrobatics</td>
-<td class="org-left">Dexterity</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Acrobatics</td>
+<td class="left">Dexterity</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Sleight of Hand</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Sleight of Hand</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Stealth</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
+<td class="left">Stealth</td>
+<td class="left">&#xa0;</td>
+<td class="left">Y</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Aracana</td>
-<td class="org-left">Intelligence</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Aracana</td>
+<td class="left">Intelligence</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">History</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
+<td class="left">History</td>
+<td class="left">&#xa0;</td>
+<td class="left">Y</td>
 </tr>
 
 <tr>
-<td class="org-left">Investigation</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Investigation</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Nature</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Nature</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Religion</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Religion</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Animal Handling</td>
-<td class="org-left">Wisdom</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Animal Handling</td>
+<td class="left">Wisdom</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Insight</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
+<td class="left">Insight</td>
+<td class="left">&#xa0;</td>
+<td class="left">Y</td>
 </tr>
 
 <tr>
-<td class="org-left">Medicine</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Medicine</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Perception</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Perception</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Survival</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Survival</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Deception</td>
-<td class="org-left">Charisma</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Deception</td>
+<td class="left">Charisma</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Intimidation</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Intimidation</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Performance</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Performance</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Persuasion</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Persuasion</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-orgdcfc6ba" class="outline-3">
-<h3 id="orgdcfc6ba"><span class="section-number-3">2.3</span> Other Proficienies and Languages</h3>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Other Proficienies and Languages</h3>
 <div class="outline-text-3" id="text-2-3">
-</div>
-<div id="outline-container-org528125e" class="outline-4">
-<h4 id="org528125e"><span class="section-number-4">2.3.1</span> Languages Known</h4>
+</div><div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Languages Known</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
-<li>Draconic</li>
-<li>Common</li>
-<li>Dwarvish</li>
-<li>Gnomish</li>
+<li>Draconic
+</li>
+<li>Common
+</li>
+<li>Dwarvish
+</li>
+<li>Gnomish
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge552562" class="outline-4">
-<h4 id="orge552562"><span class="section-number-4">2.3.2</span> Tool Proficiencies</h4>
+<div id="outline-container-sec-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> Tool Proficiencies</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
-<li>Artisan's tools</li>
+<li>Artisan's tools
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7f66d6d" class="outline-4">
-<h4 id="org7f66d6d"><span class="section-number-4">2.3.3</span> Weapon Proficiencies</h4>
+<div id="outline-container-sec-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3"><span class="section-number-4">2.3.3</span> Weapon Proficiencies</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
-<li>Simple weapons</li>
-<li>Shortswords</li>
+<li>Simple weapons
+</li>
+<li>Shortswords
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org931add6" class="outline-2">
-<h2 id="org931add6"><span class="section-number-2">3</span> Combat</h2>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Combat</h2>
 <div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-orgc659b12" class="outline-3">
-<h3 id="orgc659b12"><span class="section-number-3">3.1</span> Defense</h3>
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Defense</h3>
 <div class="outline-text-3" id="text-3-1">
-<table id="org658edcf" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Defense" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Armor Class (Unarmored)</th>
-<th scope="col" class="org-right">Initiative</th>
-<th scope="col" class="org-right">Speed (Unarmored)</th>
+<th scope="col" class="right">Armor Class (Unarmored)</th>
+<th scope="col" class="right">Initiative</th>
+<th scope="col" class="right">Speed (Unarmored)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">17</td>
-<td class="org-right">4</td>
-<td class="org-right">40</td>
+<td class="right">17</td>
+<td class="right">4</td>
+<td class="right">40</td>
 </tr>
 </tbody>
 </table>
 
 <ul class="org-ul">
-<li><b>Base speed:</b> 30.</li>
-<li>Unarmored speed increases as per the <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
+<li><b>Base speed:</b> 30.
+</li>
+<li>Unarmored speed increases as per the <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5a109e6" class="outline-3">
-<h3 id="org5a109e6"><span class="section-number-3">3.2</span> Health</h3>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Health</h3>
 <div class="outline-text-3" id="text-3-2">
-<table id="org43adead" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Health" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Hit Point Maximum</th>
-<th scope="col" class="org-right">Current Hit Points</th>
-<th scope="col" class="org-left">Temp Hit Point</th>
+<th scope="col" class="right">Hit Point Maximum</th>
+<th scope="col" class="right">Current Hit Points</th>
+<th scope="col" class="left">Temp Hit Point</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">17</td>
-<td class="org-right">17</td>
-<td class="org-left">&#xa0;</td>
+<td class="right">25</td>
+<td class="right">25</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="outline-container-org78aa065" class="outline-4">
-<h4 id="org78aa065"><span class="section-number-4">3.2.1</span> Hit Dice</h4>
+<div id="outline-container-sec-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1"><span class="section-number-4">3.2.1</span> Hit Dice</h4>
 <div class="outline-text-4" id="text-3-2-1">
-<table id="org22c4fc0" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="HD" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Type</th>
-<th scope="col" class="org-right">Number</th>
+<th scope="col" class="right">Type</th>
+<th scope="col" class="right">Number</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">1d8</td>
-<td class="org-right">2</td>
+<td class="right">1d8</td>
+<td class="right">3</td>
 </tr>
 </tbody>
 </table>
@@ -689,254 +607,284 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4b37621" class="outline-3">
-<h3 id="org4b37621"><span class="section-number-3">3.3</span> Weapons</h3>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Weapons</h3>
 <div class="outline-text-3" id="text-3-3">
-<table id="org59a8cf0" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="ImpMod" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Strength Modifier</th>
-<th scope="col" class="org-right">Dexterity Mod</th>
-<th scope="col" class="org-right">Proficiency Bonus</th>
+<th scope="col" class="right">Strength Modifier</th>
+<th scope="col" class="right">Dexterity Mod</th>
+<th scope="col" class="right">Proficiency Bonus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">4</td>
-<td class="org-right">4</td>
-<td class="org-right">2</td>
+<td class="right">4</td>
+<td class="right">4</td>
+<td class="right">2</td>
 </tr>
 </tbody>
 </table>
 
 <ul class="org-ul">
 <li>When attacking with monk weapons or unarmed strike can use either Strength, or
-Dexterity to attack and damage</li>
+Dexterity to attack and damage
+</li>
 <li>Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
-action.</li>
+action.
+</li>
 <li>Can roll a d4 in place of the normal damage of unarmed strike or monk
 weapon. This die can change with gaining of monk levels. Check martial arts
-column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
-<li>Proficient in monk weapons and unarmed strike.</li>
+column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.
+</li>
+<li>Proficient in monk weapons and unarmed strike.
+</li>
 </ul>
 
-<table id="orgf628ac9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<table id="Weapons" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">Weapons</th>
-<th scope="col" class="org-left">Proficient?</th>
-<th scope="col" class="org-right">Base Damage</th>
-<th scope="col" class="org-left">Type</th>
-<th scope="col" class="org-left">Range</th>
+<th scope="col" class="left">Weapons</th>
+<th scope="col" class="left">Proficient?</th>
+<th scope="col" class="right">Base Damage</th>
+<th scope="col" class="left">Type</th>
+<th scope="col" class="left">Range</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Spear</td>
-<td class="org-left">Y</td>
-<td class="org-right">1d6</td>
-<td class="org-left">Piercing</td>
-<td class="org-left">20/60</td>
+<td class="left">Spear</td>
+<td class="left">Y</td>
+<td class="right">1d6</td>
+<td class="left">Piercing</td>
+<td class="left">20/60</td>
 </tr>
 
 <tr>
-<td class="org-left">Dart</td>
-<td class="org-left">Y</td>
-<td class="org-right">1d4</td>
-<td class="org-left">Piercing</td>
-<td class="org-left">20/60</td>
+<td class="left">Dart</td>
+<td class="left">Y</td>
+<td class="right">1d4</td>
+<td class="left">Piercing</td>
+<td class="left">20/60</td>
 </tr>
 
 <tr>
-<td class="org-left">Unarmed Strike</td>
-<td class="org-left">Y</td>
-<td class="org-right">1d4</td>
-<td class="org-left">Bludgeon</td>
-<td class="org-left">5</td>
+<td class="left">Unarmed Strike</td>
+<td class="left">Y</td>
+<td class="right">1d4</td>
+<td class="left">Bludgeon</td>
+<td class="left">5</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-orgb597506" class="outline-3">
-<h3 id="orgb597506"><span class="section-number-3">3.4</span> Ki</h3>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Ki</h3>
 <div class="outline-text-3" id="text-3-4">
-<table id="org2e55537" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Ki" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-right" />
+<col  class="right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Ki Points</th>
-<th scope="col" class="org-right">Ki Save DC</th>
+<th scope="col" class="right">Ki Points</th>
+<th scope="col" class="right">Ki Save DC</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">2</td>
-<td class="org-right">13</td>
+<td class="right">3</td>
+<td class="right">13</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="outline-container-org645df04" class="outline-4">
-<h4 id="org645df04"><span class="section-number-4">3.4.1</span> Ki features</h4>
+<div id="outline-container-sec-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span> Ki features</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <ul class="org-ul">
 <li><b>Flurry of Blows:</b> Immediately after attack, use 1 ki point to make two unarmed
-strikes as a bonus action.</li>
+strikes as a bonus action.
+</li>
 <li><b>Patient Defense:</b> Use 1 ki point to take the dodge action as bonus action on
-own turn.</li>
+own turn.
+</li>
 <li><b>Step of the Wind:</b> Use 1 ki point to disengage or dash as a bonus action on own
-turn. Jump distance is doubled for the turn.</li>
+turn. Jump distance is doubled for the turn.
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4316337" class="outline-2">
-<h2 id="org4316337"><span class="section-number-2">4</span> Equipment</h2>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Equipment</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
-<li>Spear</li>
-<li>Dart × 10</li>
+<li>Spear
+</li>
+<li>Dart × 10
+</li>
 <li>Dungeoneer's Pack
 <ul class="org-ul">
-<li>Backpack</li>
-<li>Crowbar</li>
-<li>Hammer</li>
-<li>Pitons × 10</li>
-<li>Torches × 10</li>
-<li>Tinderbox</li>
-<li>Ration × 10 days</li>
-<li>Waterskin</li>
-<li>Hempen rope - 50 feet</li>
-</ul></li>
-<li>Uniform</li>
-<li>Horn</li>
-<li>Set of manacles</li>
-<li>Pouch</li>
+<li>Backpack
+</li>
+<li>Crowbar
+</li>
+<li>Hammer
+</li>
+<li>Pitons × 10
+</li>
+<li>Torches × 10
+</li>
+<li>Tinderbox
+</li>
+<li>Ration × 10 days
+</li>
+<li>Waterskin
+</li>
+<li>Hempen rope - 50 feet
+</li>
+</ul>
+</li>
+<li>Uniform
+</li>
+<li>Horn
+</li>
+<li>Set of manacles
+</li>
+<li>Pouch
+</li>
 </ul>
 
-<table id="org4a2f8cc" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="Coin" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-right" />
+<col  class="right" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">PP</th>
-<th scope="col" class="org-right">GP</th>
-<th scope="col" class="org-left">EP</th>
-<th scope="col" class="org-left">SP</th>
-<th scope="col" class="org-left">CP</th>
+<th scope="col" class="left">PP</th>
+<th scope="col" class="right">GP</th>
+<th scope="col" class="left">EP</th>
+<th scope="col" class="left">SP</th>
+<th scope="col" class="left">CP</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-right">10</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="right">71</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-orgd97d556" class="outline-2">
-<h2 id="orgd97d556"><span class="section-number-2">5</span> Features</h2>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Features</h2>
 <div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-orgf28034d" class="outline-3">
-<h3 id="orgf28034d"><span class="section-number-3">5.1</span> Dragonborn features</h3>
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Dragonborn features</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
-<li>Red Dragon.</li>
+<li>Red Dragon.
+</li>
 <li>Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
 dealing 2d6 fire damage, Dexterity save for half damage. DC  = 8 +
-Constitution Modifier + Proficiency.</li>
-<li>Resist fire damage.</li>
+Constitution Modifier + Proficiency.
+</li>
+<li>Resist fire damage.
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3cae7d6" class="outline-3">
-<h3 id="org3cae7d6"><span class="section-number-3">5.2</span> City Watch features</h3>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> City Watch features</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
-<li>Have a knack for finding crime dens and constabularies.</li>
+<li>Have a knack for finding crime dens and constabularies.
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge4be3e9" class="outline-3">
-<h3 id="orge4be3e9"><span class="section-number-3">5.3</span> Monk features</h3>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Monk features</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
-<li>Wisdom modifier added to AC when unarmoured, and not carrying a shield.</li>
+<li>Wisdom modifier added to AC when unarmoured, and not carrying a shield.
+</li>
 <li>Can use dexterity for attack and damage when unarmed or using monk
-weapons.</li>
+weapons. 
+</li>
 <li>Can roll a d4 in place of the normal damage of unarmed strike or monk
 weapon. This die can change with gaining of monk levels. Check martial arts
-column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
+column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.
+</li>
 <li>Can make an unarmed attack as a bonus action when unarmed or using monk
-weapons.</li>
+weapons.
+</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4085b7f" class="outline-2">
-<h2 id="org4085b7f"><span class="section-number-2">6</span> Backstory</h2>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Backstory</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-<i>"Tansen, Taaannnsennn, &#x2026;." a oddly familiar voice called him, amidst all the</i>
+"<i>Tansen, Taaannnsennn, &#x2026;." a oddly familiar voice called him, amidst all the</i>
 <i>din. He could not quite place where it was coming from, nor whose voice it</i>
 <i>was. He knew the speaker was calling him, but that was not his name. He was</i>
 <i>Sohandus. Then why did the voice did not call him as such? His reptilian brain</i>
 <i>could not figure that out. Reptilian! Why was he thinking of himself as a</i>
 <i>reptile? Sure he had wings, but they were the wings of an angel not of a</i>
-<i>wyvern. No! None of that mattered now. Angel, wyverns, the voice, the crowd,</i>
+<i>wyvern. No</i>! <i>None of that mattered now. Angel, wyverns, the voice, the crowd</i>,
 <i>none of that mattered. Nothing except the "Lady of the Blades", standing between</i>
 <i>them and their salvation, mattered. And here comes her first salvo.</i>
 </p>
@@ -999,7 +947,9 @@ after work. The manuscripts might have some answers.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2018-06-02 Sat 13:54</p>
+<p class="author">Author: soham</p>
+<p class="date">Created: 2018-06-02 Sat 23:53</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
