@@ -70,7 +70,7 @@
 - Draconic
 - Common
 - Dwarvish
-- Gnomish
+- Orc
 
 *** Tool Proficiencies
 - Artisan's tools
@@ -92,6 +92,7 @@
 
 - *Base speed:* 30.
 - Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+- [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
 
 ** Health
 
@@ -140,12 +141,11 @@
 
 #+NAME: Ki
 #+ATTR_HTML: :border 2 :frame border :rules all
-| Ki Points | Ki Save DC |
-|-----------+------------|
-|         3 |         13 |
+| Ki Points Maximum | Current Ki Points | Ki Save DC |
+|-------------------+-------------------+------------|
+|                 3 |                 3 |         13 |
 #+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
-*** Ki features
 - *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
   strikes as a bonus action.
 - *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
@@ -174,9 +174,9 @@
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
-| PP | GP | EP | SP | CP |
-|----+----+----+----+----|
-|    | 71 |    |    |    |
+| PP |  GP | EP | SP | CP |
+|----+-----+----+----+----|
+|    | 185 |  4 | 40 | 81 |
 
 * Features
 
