@@ -12,7 +12,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Race       | Class | Background | Alignment   | Level | XP |
 |------------+-------+------------+-------------+-------+----|
-| Dragonborn | Monk  | City Watch | Lawful Good |     3 |    |
+| Dragonborn | Monk  | City Watch | Lawful Good |     4 |    |
 
 * Attributes and Skills
 #+NAME: Attributes
@@ -20,7 +20,7 @@
 |              | Score | Modifier |
 |--------------+-------+----------|
 | Strength     |    18 |        4 |
-| Dexterity    |    18 |        4 |
+| Dexterity    |    20 |        5 |
 | Constitution |    16 |        3 |
 | Intelligence |    11 |        0 |
 | Wisdom       |    16 |        3 |
@@ -87,7 +87,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Armor Class (Unarmored) | Initiative | Speed (Unarmored) |
 |-------------------------+------------+-------------------|
-|                      17 |          4 |                40 |
+|                      18 |          4 |                40 |
 #+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
 
 - *Base speed:* 30.
@@ -100,7 +100,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point |
 |-------------------+--------------------+----------------|
-|                25 |                 25 |                |
+|                33 |                 33 |                |
 
 *** Hit Dice
 
@@ -108,7 +108,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Type | Number |
 |------+--------|
-|  1d8 |      3 |
+|  1d8 |      4 |
 
 ** Weapons
 
@@ -120,9 +120,11 @@
 #+TBLFM: @2$1=remote(Attributes,@2$3)::@2$2=remote(Attributes,@3$3)::@2$3=remote(Prof,@2$2)
 
 - When attacking with monk weapons or unarmed strike can use either Strength, or
-  Dexterity to attack and damage
+  Dexterity to attack and damage.
 - Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
   action.
+- Ki wraps give +1 to attack and damage when attacking with monk weapons or
+  unarmed strike.
 - Can roll a d4 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
@@ -143,15 +145,17 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 3 |                 3 |         13 |
+|                 4 |                 4 |         13 |
 #+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
+- *Ki Wraps* allow regaining up to two ki points in between two long rests.
 - *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
   strikes as a bonus action.
 - *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
   own turn.
 - *Step of the Wind:* Use 1 ki point to disengage or dash as a bonus action on own
   turn. Jump distance is doubled for the turn.
+- *Detect Thoughts:* Use 2 ki points for the spell.
 
 * Equipment
 
@@ -171,12 +175,13 @@
 - Horn
 - Set of manacles
 - Pouch
+- Ki Wraps
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
 | PP |  GP | EP | SP | CP |
 |----+-----+----+----+----|
-|    | 185 |  4 | 40 | 81 |
+|    | 496 | 44 | 95 | 81 |
 
 * Features
 
@@ -199,6 +204,7 @@
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - Can make an unarmed attack as a bonus action when unarmed or using monk
   weapons.
+- [[http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall][Slow Fall]]
 
 * Backstory
 
