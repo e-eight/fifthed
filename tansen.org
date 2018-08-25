@@ -12,7 +12,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Race       | Class | Background | Alignment   | Level |    XP |
 |------------+-------+------------+-------------+-------+-------|
-| Dragonborn | Monk  | City Watch | Lawful Good |     6 | 16857 |
+| Dragonborn | Monk  | City Watch | Lawful Good |     7 | 16857 |
 
 * Attributes and Skills
 #+NAME: Attributes
@@ -29,7 +29,9 @@
 
 #+NAME: Prof
 #+ATTR_HTML: :border 2 :rules all :frame border
-
+| Initiative | Proficiency |
+|------------+-------------|
+|          4 |           3 |
 ** Saving Throws
 - Strength
 - Dexterity
@@ -91,6 +93,7 @@
 - *Base speed:* 30.
 - Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
+- [[http://dnd5e.wikia.com/wiki/Monk#Evasion][Evasion]]
 
 ** Health
 
@@ -98,7 +101,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point | Health Potions |
 |-------------------+--------------------+----------------+----------------|
-|                49 |                 29 |                |              3 |
+|                57 |                    |                |              3 |
 
 *** Hit Dice
 
@@ -143,8 +146,8 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 6 |                 6 |         13 |
-#+TBLFM: @2$2=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
+|                 7 |                   |         14 |
+#+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 - *Ki Wraps* allow regaining up to two ki points in between two long rests.
 - *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
@@ -206,6 +209,7 @@
 - Can make an unarmed attack as a bonus action when unarmed or using monk
   weapons.
 - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall][Slow Fall]].
+- [[http://dnd5e.wikia.com/wiki/Monk#Stillness_of_Mind][Stillness of Mind]].
 
 * Taroka Cards
 
