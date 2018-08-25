@@ -29,8 +29,6 @@
 
 #+NAME: Prof
 #+ATTR_HTML: :border 2 :rules all :frame border
-| Inspiration | Proficiency |
-|             |           2 |
 
 ** Saving Throws
 - Strength
@@ -100,7 +98,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point | Health Potions |
 |-------------------+--------------------+----------------+----------------|
-|                49 |                 48 |             54 |              0 |
+|                49 |                 29 |                |              3 |
 
 *** Hit Dice
 
@@ -176,14 +174,15 @@
 - Set of manacles
 - Pouch
 - Ki Wraps
-- Ring of Animal Influence
+- Ring of Animal Influence - Charges: 6
 - Hat of Disguise
+- Mirror of the Past - Shows something from the target's past.
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
-| PP |  GP | EP |  SP |  CP |
-|----+-----+----+-----+-----|
-|  1 | 563 | 60 | 138 | 231 |
+| PP | GP        | EP | SP         |  CP |
+|----+-----------+----+------------+-----|
+|  1 | 898 (437) | 90 | 3538 (600) | 231 |
 
 * Features
 
@@ -207,6 +206,22 @@
 - Can make an unarmed attack as a bonus action when unarmed or using monk
   weapons.
 - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall][Slow Fall]].
+
+* Taroka Cards
+
+- Knowledge of the ancient will help you better understand the enemy. -
+  Swashbuckler.
+  + Skeleton of a deadly warrior lying on a bed of stone flanked by gargoyles.
+- Powerful force for good and protection. Holy symbol of great hope. - Mercenary
+  + Thing you seek lies with the dead under mountains of gold coins.
+- Power and Strength. Weapon of Vengeance. - Transmuter.
+  + Go to a place of dizzying heights where the stone itself is alive.
+- Sheds light on who will help you in the battle against darkness. - Marionette.
+  + Your greatest ally will be a wizard. His mind is broken but his spells are
+    strong.
+- Your enemy is a creature of darknes. Immortal. - Broken One.
+  + Look to great heights. Find the beating heart of the castle. He waits
+    nearby.
 
 * Backstory
 
