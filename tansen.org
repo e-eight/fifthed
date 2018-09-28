@@ -101,7 +101,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Point | Health Potions |
 |-------------------+--------------------+----------------+----------------|
-|                57 |                    |                |              3 |
+|                57 |                 48 |                |                |
 
 *** Hit Dice
 
@@ -109,7 +109,8 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Type | Number |
 |------+--------|
-|  1d8 |      6 |
+|  1d8 |      7 |
+#+TBLFM: @2$2=remote(BASICINFO,@2$5)
 
 ** Weapons
 
@@ -117,7 +118,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Strength Modifier | Dexterity Mod | Proficiency Bonus |
 |-------------------+---------------+-------------------|
-|                 4 |             5 |                 2 |
+|                 4 |             5 |                 3 |
 #+TBLFM: @2$1=remote(Attributes,@2$3)::@2$2=remote(Attributes,@3$3)::@2$3=remote(Prof,@2$2)
 
 - When attacking with monk weapons or unarmed strike can use either Strength, or
@@ -126,7 +127,7 @@
   action.
 - Ki wraps give +1 to attack and damage when attacking with monk weapons or
   unarmed strike.
-- Can roll a d4 in place of the normal damage of unarmed strike or monk
+- Can roll a d6 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - Proficient in monk weapons and unarmed strike.
@@ -135,10 +136,12 @@
 #+ATTR_HTML: :border 2 :frame border
 | Weapons        | Proficient? | Base Damage | Type     | Range |
 |----------------+-------------+-------------+----------+-------|
-| Spear          | Y           |         1d6 | Piercing | 20/60 |
+| Spear          | Y           |   1d6 (1d8) | Piercing | 20/60 |
 | Dart           | Y           |         1d4 | Piercing | 20/60 |
 | Unarmed Strike | Y           |         1d4 | Bludgeon | 5     |
 #+TBLFM: @4$2=remote(Attributes,@3$3)
+
+- 2 bottles of holy water.
 
 ** Ki
 
@@ -146,7 +149,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 7 |                   |         14 |
+|                 7 |                 4 |         14 |
 #+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 - *Ki Wraps* allow regaining up to two ki points in between two long rests.
@@ -177,7 +180,7 @@
 - Set of manacles
 - Pouch
 - Ki Wraps
-- Ring of Animal Influence - Charges: 6
+- Ring of Animal Influence - Charges: 3
 - Hat of Disguise
 - Mirror of the Past - Shows something from the target's past.
 
@@ -185,7 +188,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | PP | GP        | EP | SP         |  CP |
 |----+-----------+----+------------+-----|
-|  1 | 898 (437) | 90 | 3538 (600) | 231 |
+|  1 | 888 (325) | 88 | 3538 (599) | 231 |
 
 * Features
 
@@ -203,7 +206,7 @@
 - Wisdom modifier added to AC when unarmoured, and not carrying a shield.
 - Can use dexterity for attack and damage when unarmed or using monk
   weapons. 
-- Can roll a d4 in place of the normal damage of unarmed strike or monk
+- Can roll a d6 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - Can make an unarmed attack as a bonus action when unarmed or using monk
@@ -214,18 +217,17 @@
 * Taroka Cards
 
 - Knowledge of the ancient will help you better understand the enemy. -
-  Swashbuckler.
-  + Skeleton of a deadly warrior lying on a bed of stone flanked by gargoyles.
-- Powerful force for good and protection. Holy symbol of great hope. - Mercenary
-  + Thing you seek lies with the dead under mountains of gold coins.
-- Power and Strength. Weapon of Vengeance. - Transmuter.
-  + Go to a place of dizzying heights where the stone itself is alive.
-- Sheds light on who will help you in the battle against darkness. - Marionette.
-  + Your greatest ally will be a wizard. His mind is broken but his spells are
-    strong.
-- Your enemy is a creature of darknes. Immortal. - Broken One.
-  + Look to great heights. Find the beating heart of the castle. He waits
-    nearby.
+  Swashbuckler. - Skeleton of a deadly warrior lying on a bed of stone flanked
+  by gargoyles.
+- Powerful force for good and protection. Holy symbol of great hope. -
+  Mercenary - Thing you seek lies with the dead under mountains of gold coins.
+- Power and Strength. Weapon of Vengeance. - Transmuter - Go to a place of
+  dizzying heights where the stone itself is alive.
+- Sheds light on who will help you in the battle against darkness. -
+  Marionette - Your greatest ally will be a wizard. His mind is broken but his
+  spells are strong.
+- Your enemy is a creature of darknes. Immortal. - Broken One - Look to great
+  heights. Find the beating heart of the castle. He waits nearby.
 
 * Backstory
 
