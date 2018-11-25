@@ -12,7 +12,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Race       | Class | Background | Alignment   | Level |    XP |
 |------------+-------+------------+-------------+-------+-------|
-| Dragonborn | Monk  | City Watch | Lawful Good |     7 | 16857 |
+| Dragonborn | Monk  | City Watch | Lawful Good |     9 | 16857 |
 
 * Attributes and Skills
 #+NAME: Attributes
@@ -31,7 +31,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Initiative | Proficiency |
 |------------+-------------|
-|          4 |           3 |
+|          4 |           4 |
 ** Saving Throws
 - Strength
 - Dexterity
@@ -90,18 +90,20 @@
 |                      18 |          4 |                45 |
 #+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
 
+- Cloak of Protection gives +1 to Armor Class.
 - *Base speed:* 30.
 - Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
 - [[http://dnd5e.wikia.com/wiki/Monk#Evasion][Evasion]]
+- Move across water and vertical surfaces on round.
 
 ** Health
 
 #+NAME: Health
 #+ATTR_HTML: :border 2 :frame border :rules all
-| Hit Point Maximum | Current Hit Points | Temp Hit Point | Health Potions |
-|-------------------+--------------------+----------------+----------------|
-|                57 |                 48 |                |                |
+| Hit Point Maximum | Current Hit Points | Temp Hit Points | Health Potions |
+|-------------------+--------------------+-----------------+----------------|
+|       73(+5)(+15) |        73(+5)(+15) |                 |                |
 
 *** Hit Dice
 
@@ -109,7 +111,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Type | Number |
 |------+--------|
-|  1d8 |      7 |
+|  1d8 |      8 |
 #+TBLFM: @2$2=remote(BASICINFO,@2$5)
 
 ** Weapons
@@ -125,23 +127,35 @@
   Dexterity to attack and damage.
 - Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
   action.
-- Ki wraps give +1 to attack and damage when attacking with monk weapons or
+- Ki wraps give +3 to attack and damage when attacking with monk weapons or
   unarmed strike.
+- Insignia of Claws gives +1 to attack and damage.
 - Can roll a d6 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - Proficient in monk weapons and unarmed strike.
+- Minimal armor master (feat)
+  + When you hit a creature that hasn’t taken a turn in combat yet, you deal an
+    additional 1d6 damage.
+  + When you make a standing jump, the distance you cover increases by a number
+    of feet equal to your Dexterity modifier.
+  + Any Initiative check result of yours that is lower than 8 + your Dexterity
+    modifier is raised to that
+- Trick or Treat.
 
 #+NAME: Weapons
 #+ATTR_HTML: :border 2 :frame border
 | Weapons        | Proficient? | Base Damage | Type     | Range |
 |----------------+-------------+-------------+----------+-------|
-| Spear          | Y           |   1d6 (1d8) | Piercing | 20/60 |
-| Dart           | Y           |         1d4 | Piercing | 20/60 |
-| Unarmed Strike | Y           |         1d4 | Bludgeon | 5     |
+| Spear          | Y           | 1d6 (1d8)   | Piercing | 20/60 |
+| Dart           | Y           | 1d4         | Piercing | 20/60 |
+| Unarmed Strike | Y           | 1d4         | Bludgeon | 5     |
+| +2 Blood Spear | Y           | 1d6 (1d8)   | Piercing | 20/60 |
 #+TBLFM: @4$2=remote(Attributes,@3$3)
 
-- 2 bottles of holy water.
+- 2 bottle of holy water.
+- If a meelee attack with the blood spear reduces the target to 0 hit points,
+  then you gain 2d6 temporary hit pints.
 
 ** Ki
 
@@ -149,10 +163,10 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 7 |                 4 |         14 |
+|                 9 |                 9 |         15 |
 #+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
-- *Ki Wraps* allow regaining up to two ki points in between two long rests.
+- *Ki Wraps* allow regaining up to six ki points in between two long rests.
 - *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
   strikes as a bonus action.
 - *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
@@ -179,16 +193,40 @@
 - Horn
 - Set of manacles
 - Pouch
-- Ki Wraps
+- +3 Ki Wraps (Requires Attunement) (C)
 - Ring of Animal Influence - Charges: 3
-- Hat of Disguise
-- Mirror of the Past - Shows something from the target's past.
+- Hat of Disguise (Requires Attunement)
+- +2 Blood Spear (Requires Attunement) (C)
+- Insignia of Claws
+- Cloak of Protection (Requires Attunement) (C)
+- Periapt of Wound Closure
+- Bag of Holding 
+  + Eversmoking Bowl
+  + Bottle of Dragon's Musk
+  + A vial of oil of Tagg-It 
+- Sending Stones
+- Dern's Instantaneous Fortress
+- Bead of Force
+- Boots of Elvenkind (Gives advantage to stealth checks that rely on moving
+  silently.)
+- Drift Globe (Cast light/daylight)
+- Potion of Growth
+- Dust of Invisibility 
+- Censur of Commanding Air Elementals
+  + Air Elemental: 
+    - AC - 15, HP - 90, Fly - 90ft 
+    - Two slam attacks (+8 to hit, 14 bludgeoning damage eat attack),
+    - Whirlwind (DC 13, On failure 15 bludgeoning damage, flung 20ft from
+      elemental in random direction.)
+- Gem of Air Elemental
+- Potion of Invulnerability
+- Potion of Stoneskin
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
 | PP | GP        | EP | SP         |  CP |
 |----+-----------+----+------------+-----|
-|  1 | 888 (325) | 88 | 3538 (599) | 231 |
+|  1 | 50 (2573) | 87 | 599 (3538) | 231 |
 
 * Features
 
@@ -221,15 +259,16 @@
   by gargoyles.
 - Powerful force for good and protection. Holy symbol of great hope. -
   Mercenary - Thing you seek lies with the dead under mountains of gold coins.
-- Power and Strength. Weapon of Vengeance. - Transmuter - Go to a place of
-  dizzying heights where the stone itself is alive.
+- Power and Strength. Weapon of Vengeance. A sword of sunlight. - Transmuter -
+  Go to a place of dizzying heights where the stone itself is alive.
 - Sheds light on who will help you in the battle against darkness. -
-  Marionette - Your greatest ally will be a wizard. His mind is broken but his
+  Broken One - Your greatest ally will be a wizard. His mind is broken but his
   spells are strong.
-- Your enemy is a creature of darknes. Immortal. - Broken One - Look to great
+- Your enemy is a creature of darknes. Immortal. - Marionette - Look to great
   heights. Find the beating heart of the castle. He waits nearby.
 
 * Backstory
 
 #+INCLUDE: "./backstory.org"
   
+
