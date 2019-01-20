@@ -103,7 +103,8 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Points | Health Potions |
 |-------------------+--------------------+-----------------+----------------|
-|       73(+5)(+15) |        73(+5)(+15) |                 |                |
+|       73(+5)(+15) |        73(+5)(+15) |                 | 2 (Common)     |
+|                   |                    |                 | 1 (Uncommon)   |
 
 *** Hit Dice
 
@@ -163,7 +164,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 9 |                 9 |         15 |
+|                 9 |                 7 |         15 |
 #+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 - *Ki Wraps* allow regaining up to six ki points in between two long rests.
@@ -195,7 +196,7 @@
 - Pouch
 - +3 Ki Wraps (Requires Attunement) (C)
 - Ring of Animal Influence - Charges: 3
-- Hat of Disguise (Requires Attunement)
+- Hat of Disguise (Requires Attunement) 
 - +2 Blood Spear (Requires Attunement) (C)
 - Insignia of Claws
 - Cloak of Protection (Requires Attunement) (C)
@@ -221,12 +222,13 @@
 - Gem of Air Elemental
 - Potion of Invulnerability
 - Potion of Stoneskin
+- Bottle of Changeling (liquor)
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
-| PP | GP        | EP | SP         |  CP |
-|----+-----------+----+------------+-----|
-|  1 | 50 (2573) | 87 | 599 (3538) | 231 |
+| PP | GP         | EP | SP         |  CP |
+|----+------------+----+------------+-----|
+|  1 | 550 (5073) | 87 | 599 (3538) | 231 |
 
 * Features
 
