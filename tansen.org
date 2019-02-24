@@ -12,7 +12,7 @@
 #+ATTR_HTML: :border 2 :rules all :frame border
 | Race       | Class | Background | Alignment   | Level |    XP |
 |------------+-------+------------+-------------+-------+-------|
-| Dragonborn | Monk  | City Watch | Lawful Good |     9 | 16857 |
+| Dragonborn | Monk  | City Watch | Lawful Good |    10 | 16857 |
 
 * Attributes and Skills
 #+NAME: Attributes
@@ -23,8 +23,8 @@
 | Dexterity    |    20 |        5 |
 | Constitution |    16 |        3 |
 | Intelligence |    11 |        0 |
-| Wisdom       |    16 |        3 |
-| Charisma     |    17 |        3 |
+| Wisdom       |    17 |        3 |
+| Charisma     |    16 |        3 |
 #+TBLFM: $3=floor(($2-10)/2)
 
 #+NAME: Prof
@@ -103,8 +103,9 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Hit Point Maximum | Current Hit Points | Temp Hit Points | Health Potions |
 |-------------------+--------------------+-----------------+----------------|
-|       73(+5)(+15) |        73(+5)(+15) |                 | 2 (Common)     |
-|                   |                    |                 | 1 (Uncommon)   |
+|       81(+5)(+15) |        81(+5)(+15) |                 | 7 (Common)     |
+|                   |                    |                 | 5 (Greater)    |
+|                   |                    |                 | 2 (Superior)   |
 
 *** Hit Dice
 
@@ -129,7 +130,7 @@
 - Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
   action.
 - Ki wraps give +3 to attack and damage when attacking with monk weapons or
-  unarmed strike.
+  unarmed strike; +3 to save DCs.
 - Insignia of Claws gives +1 to attack and damage.
 - Can roll a d6 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
@@ -146,12 +147,12 @@
 
 #+NAME: Weapons
 #+ATTR_HTML: :border 2 :frame border
-| Weapons        | Proficient? | Base Damage | Type     | Range |
-|----------------+-------------+-------------+----------+-------|
-| Spear          | Y           | 1d6 (1d8)   | Piercing | 20/60 |
-| Dart           | Y           | 1d4         | Piercing | 20/60 |
-| Unarmed Strike | Y           | 1d4         | Bludgeon | 5     |
-| +2 Blood Spear | Y           | 1d6 (1d8)   | Piercing | 20/60 |
+| Weapons             | Proficient? | Base Damage     | Type     | Range |
+|---------------------+-------------+-----------------+----------+-------|
+| Blood Spear         | Y           | 1d6 (1d8)       | Piercing | 20/60 |
+| Dart                | Y           | 1d4             | Piercing | 20/60 |
+| Unarmed Strike      | Y           | 1d6             | Bludgeon | 5     |
+| +2 Blood Shortsword | Y           | 1d6 (Monk dice) | Piercing | 20/60 |
 #+TBLFM: @4$2=remote(Attributes,@3$3)
 
 - 2 bottle of holy water.
@@ -164,7 +165,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | Ki Points Maximum | Current Ki Points | Ki Save DC |
 |-------------------+-------------------+------------|
-|                 9 |                 7 |         15 |
+|                10 |                10 |         15 |
 #+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
 - *Ki Wraps* allow regaining up to six ki points in between two long rests.
@@ -196,15 +197,15 @@
 - Pouch
 - +3 Ki Wraps (Requires Attunement) (C)
 - Ring of Animal Influence - Charges: 3
-- Hat of Disguise (Requires Attunement) 
-- +2 Blood Spear (Requires Attunement) (C)
+- Hat of Disguise (Requires Attunement)
+- Blood Spear (Requires Attunement) (C)
 - Insignia of Claws
 - Cloak of Protection (Requires Attunement) (C)
 - Periapt of Wound Closure
-- Bag of Holding 
+- Bag of Holding
   + Eversmoking Bowl
   + Bottle of Dragon's Musk
-  + A vial of oil of Tagg-It 
+  + A vial of oil of Tagg-It
 - Sending Stones
 - Dern's Instantaneous Fortress
 - Bead of Force
@@ -212,10 +213,10 @@
   silently.)
 - Drift Globe (Cast light/daylight)
 - Potion of Growth
-- Dust of Invisibility 
+- Dust of Invisibility
 - Censur of Commanding Air Elementals
-  + Air Elemental: 
-    - AC - 15, HP - 90, Fly - 90ft 
+  + Air Elemental:
+    - AC - 15, HP - 90, Fly - 90ft
     - Two slam attacks (+8 to hit, 14 bludgeoning damage eat attack),
     - Whirlwind (DC 13, On failure 15 bludgeoning damage, flung 20ft from
       elemental in random direction.)
@@ -223,12 +224,14 @@
 - Potion of Invulnerability
 - Potion of Stoneskin
 - Bottle of Changeling (liquor)
+- Scroll of Revivify (x2)
+- Scroll of Raise Dead (x2)
 
 #+NAME: Coin
 #+ATTR_HTML: :border 2 :frame border :rules all
-| PP | GP         | EP | SP         |  CP |
-|----+------------+----+------------+-----|
-|  1 | 550 (5073) | 87 | 599 (3538) | 231 |
+| PP | GP         | EP | SP     |  CP |
+|----+------------+----+--------+-----|
+|  1 | 533 (9132) | 87 | 599 () | 231 |
 
 * Features
 
@@ -245,7 +248,7 @@
 ** Monk features
 - Wisdom modifier added to AC when unarmoured, and not carrying a shield.
 - Can use dexterity for attack and damage when unarmed or using monk
-  weapons. 
+  weapons.
 - Can roll a d6 in place of the normal damage of unarmed strike or monk
   weapon. This die can change with gaining of monk levels. Check martial arts
   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
@@ -272,5 +275,3 @@
 * Backstory
 
 #+INCLUDE: "./backstory.org"
-  
-
