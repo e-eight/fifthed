@@ -149,15 +149,17 @@
 #+ATTR_HTML: :border 2 :frame border
 | Weapons             | Proficient? | Base Damage     | Type     | Range |
 |---------------------+-------------+-----------------+----------+-------|
-| Blood Spear         | Y           | 1d6 (1d8)       | Piercing | 20/60 |
 | Dart                | Y           | 1d4             | Piercing | 20/60 |
 | Unarmed Strike      | Y           | 1d6             | Bludgeon | 5     |
 | +2 Blood Shortsword | Y           | 1d6 (Monk dice) | Piercing | 20/60 |
+| Spellguard Shield   | N           |                 |          |       |
 #+TBLFM: @4$2=remote(Attributes,@3$3)
 
 - 2 bottle of holy water.
 - If a meelee attack with the blood spear reduces the target to 0 hit points,
   then you gain 2d6 temporary hit pints.
+- Spellguard shield (AC 2) gives advantage on saving throws against spells and 
+  other magical effects. Spell attacks against you have disadvantage.
 
 ** Ki
 
@@ -198,7 +200,8 @@
 - +3 Ki Wraps (Requires Attunement) (C)
 - Ring of Animal Influence - Charges: 3
 - Hat of Disguise (Requires Attunement)
-- Blood Spear (Requires Attunement) (C)
+- Blood Shortsword (Requires Attunement) (C)
+- Spellguard Shield (Requires Attunement)
 - Insignia of Claws
 - Cloak of Protection (Requires Attunement) (C)
 - Periapt of Wound Closure
@@ -231,7 +234,7 @@
 #+ATTR_HTML: :border 2 :frame border :rules all
 | PP | GP         | EP | SP     |  CP |
 |----+------------+----+--------+-----|
-|  1 | 533 (9132) | 87 | 599 () | 231 |
+|  1 | 533 (4132) | 87 | 599 () | 231 |
 
 * Features
 
