@@ -166,8 +166,12 @@
 | Weapons             | Proficient? | Base Damage     | Type     | Range |
 |---------------------+-------------+-----------------+----------+-------|
 | Dart                | Y           | 1d4             | Piercing | 20/60 |
-| Unarmed Strike      | Y           | 1d6             | Bludgeon | 5     |
+| Unarmed Strike      | Y           | 1d8             | Bludgeon | 5     |
 #+TBLFM: @4$2=remote(Attributes,@3$3)
+Way of the Four Elements (homebrewed) allows an additional 1d10 + half monk level
+damage for an attack during the Attack action. The range is also increased to 60
+feet. The damage can be increased by spending ki points, up to a maximum of three.
+Each ki point spent increases the damage by 1d10.
 
 - 2 bottle of holy water.
 
