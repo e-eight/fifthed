@@ -113,7 +113,7 @@
 - Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
 - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
 - [[http://dnd5e.wikia.com/wiki/Monk#Evasion][Evasion]]
-- Move across water and vertical surfaces on round.
+- Move across water and vertical surfaces on ground.
 
 ** Health
 
