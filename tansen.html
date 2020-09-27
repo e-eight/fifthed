@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-20 Fri 03:10 -->
+<!-- 2020-09-27 Sun 02:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tansen</title>
+<title>Tansen Dragonfistface</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="soham" />
+<meta name="author" content="Soham Pal" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -180,111 +193,56 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Tansen</h1>
+<h1 class="title">Tansen Dragonfistface</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6f906a8">1. Basic Information</a></li>
-<li><a href="#orgfb49e9a">2. Attributes and Skills</a>
+<li><a href="#orge457782">Attributes and Skills</a></li>
+<li><a href="#org9760b03">Combat Information</a>
 <ul>
-<li><a href="#org3883189">2.1. Saving Throws</a></li>
-<li><a href="#orge2e854e">2.2. Skills</a></li>
-<li><a href="#orga09d053">2.3. Other Proficienies and Languages</a>
-<ul>
-<li><a href="#orgbb61a7f">2.3.1. Languages Known</a></li>
-<li><a href="#orge89d975">2.3.2. Tool Proficiencies</a></li>
-<li><a href="#org44e33a1">2.3.3. Weapon Proficiencies</a></li>
+<li><a href="#orgd2653ae">Ki</a></li>
+<li><a href="#orgac7d95e">Attacks and Spellcasting</a></li>
 </ul>
 </li>
+<li><a href="#orged08d56">Features and Proficiencies</a></li>
+<li><a href="#org943571f">Equipment</a></li>
 </ul>
 </li>
-<li><a href="#org8011c29">3. Combat</a>
-<ul>
-<li><a href="#orgc5a910b">3.1. Defense</a></li>
-<li><a href="#orge68fdf2">3.2. Health</a>
-<ul>
-<li><a href="#orgae8a9e0">3.2.1. Hit Dice</a></li>
-</ul>
-</li>
-<li><a href="#org8d3589b">3.3. Weapons</a></li>
-<li><a href="#orgc818be0">3.4. Ki</a></li>
-</ul>
-</li>
-<li><a href="#orgc631a1e">4. Equipment</a></li>
-<li><a href="#org01b04ed">5. Features</a>
-<ul>
-<li><a href="#org6b0aff1">5.1. Dragonborn features</a></li>
-<li><a href="#org19e5c16">5.2. City Watch features</a></li>
-<li><a href="#org2fb9bef">5.3. Monk features</a></li>
-</ul>
-</li>
-<li><a href="#orgf5a65d6">6. Taroka Cards</a></li>
-<li><a href="#org3600cf9">7. Backstory</a></li>
-<li><a href="#orgc6ad671">8. Dark Gifts</a></li>
-</ul>
+<li><a href="#org4e3709d">Backstory</a></div>
 </div>
-</div>
-
-<div id="outline-container-org6f906a8" class="outline-2">
-<h2 id="org6f906a8"><span class="section-number-2">1</span> Basic Information</h2>
-<div class="outline-text-2" id="text-1">
-<table id="orgc652876" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="orge850410" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -292,42 +250,40 @@ for the JavaScript code in this tag.
 
 <col  class="org-left" />
 
+<col  class="org-right" />
+
 <col  class="org-left" />
 
 <col  class="org-left" />
 
-<col  class="org-right" />
-
-<col  class="org-right" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
 <th scope="col" class="org-left">Race</th>
 <th scope="col" class="org-left">Class</th>
+<th scope="col" class="org-right">Level</th>
 <th scope="col" class="org-left">Background</th>
 <th scope="col" class="org-left">Alignment</th>
-<th scope="col" class="org-right">Level</th>
-<th scope="col" class="org-right">XP</th>
+<th scope="col" class="org-left">Experince Points</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="org-left">Dragonborn</td>
 <td class="org-left">Monk</td>
+<td class="org-right">13</td>
 <td class="org-left">City Watch</td>
 <td class="org-left">Lawful Good</td>
-<td class="org-right">12</td>
-<td class="org-right">16857</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
 
-<div id="outline-container-orgfb49e9a" class="outline-2">
-<h2 id="orgfb49e9a"><span class="section-number-2">2</span> Attributes and Skills</h2>
-<div class="outline-text-2" id="text-2">
-<table id="org8fd2357" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<div id="outline-container-orge457782" class="outline-3">
+<h3 id="orge457782">Attributes and Skills</h3>
+<div class="outline-text-3" id="text-orge457782">
+<table id="orga2a4873" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -336,304 +292,208 @@ for the JavaScript code in this tag.
 <col  class="org-right" />
 
 <col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-right">Score</th>
-<th scope="col" class="org-right">Modifier</th>
+<th scope="col" class="org-left">Attribute</th>
+<th scope="col" class="org-right">Value</th>
+<th scope="col" class="org-right">Mod</th>
+<th scope="col" class="org-left">Save?</th>
+<th scope="col" class="org-left">Skills</th>
+<th scope="col" class="org-left">Proficient?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Strength</td>
+<td class="org-left">STR</td>
 <td class="org-right">18</td>
 <td class="org-right">4</td>
+<td class="org-left">[X]</td>
+<td class="org-left">Athletics</td>
+<td class="org-left">[X]</td>
 </tr>
 
 <tr>
-<td class="org-left">Dexterity</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">DEX</td>
 <td class="org-right">20</td>
 <td class="org-right">5</td>
+<td class="org-left">[X]</td>
+<td class="org-left">Acrobatics</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Constitution</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Stealth</td>
+<td class="org-left">[X]</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">CON</td>
 <td class="org-right">16</td>
 <td class="org-right">3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
-
+</tbody>
+<tbody>
 <tr>
-<td class="org-left">Intelligence</td>
+<td class="org-left">INT</td>
 <td class="org-right">11</td>
 <td class="org-right">0</td>
-</tr>
-
-<tr>
-<td class="org-left">Wisdom</td>
-<td class="org-right">17</td>
-<td class="org-right">3</td>
-</tr>
-
-<tr>
-<td class="org-left">Charisma</td>
-<td class="org-right">16</td>
-<td class="org-right">3</td>
-</tr>
-</tbody>
-</table>
-
-<table id="orga5fe4e3" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Initiative</th>
-<th scope="col" class="org-right">Proficiency</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">4</td>
-<td class="org-right">4</td>
-</tr>
-</tbody>
-</table>
-
-<table id="org0b0eb6e" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Inspiration Points</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">5</td>
-</tr>
-</tbody>
-</table>
-
-<table id="org13b5783" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Downtime Hours</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">120</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div id="outline-container-org3883189" class="outline-3">
-<h3 id="org3883189"><span class="section-number-3">2.1</span> Saving Throws</h3>
-<div class="outline-text-3" id="text-2-1">
-<ul class="org-ul">
-<li>Strength</li>
-<li>Dexterity</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orge2e854e" class="outline-3">
-<h3 id="orge2e854e"><span class="section-number-3">2.2</span> Skills</h3>
-<div class="outline-text-3" id="text-2-2">
-<table id="org4dc4baa" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-left">Attribute</th>
-<th scope="col" class="org-left">Proficient?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Athletics</td>
-<td class="org-left">Strength</td>
-<td class="org-left">Y</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">Acrobatics</td>
-<td class="org-left">Dexterity</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Arcana</td>
 <td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Sleight of Hand</td>
 <td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Stealth</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">Aracana</td>
-<td class="org-left">Intelligence</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
 <td class="org-left">History</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
+<td class="org-left">[X]</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Investigation</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Nature</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Religion</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Animal Handling</td>
-<td class="org-left">Wisdom</td>
+<td class="org-left">WIS</td>
+<td class="org-right">19</td>
+<td class="org-right">4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Animal handling</td>
 <td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Insight</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">Y</td>
+<td class="org-left">[X]</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Medicine</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Perception</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Survival</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
+<td class="org-left">CHA</td>
+<td class="org-right">16</td>
+<td class="org-right">3</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Deception</td>
-<td class="org-left">Charisma</td>
 <td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Intimidation</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Performance</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 <td class="org-left">Persuasion</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
 
-<div id="outline-container-orga09d053" class="outline-3">
-<h3 id="orga09d053"><span class="section-number-3">2.3</span> Other Proficienies and Languages</h3>
-<div class="outline-text-3" id="text-2-3">
-</div>
-<div id="outline-container-orgbb61a7f" class="outline-4">
-<h4 id="orgbb61a7f"><span class="section-number-4">2.3.1</span> Languages Known</h4>
-<div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
-<li>Draconic</li>
-<li>Common</li>
-<li>Dwarvish</li>
-<li>Orc</li>
+<li>+1 bonus to saving throws with <a href="#orgb47dc5e">Cloak of Protection</a>.</li>
+<li>+3 bonus to saving throws with <a href="#org38605d2">Ki Straps</a>.</li>
 </ul>
-</div>
-</div>
 
-<div id="outline-container-orge89d975" class="outline-4">
-<h4 id="orge89d975"><span class="section-number-4">2.3.2</span> Tool Proficiencies</h4>
-<div class="outline-text-4" id="text-2-3-2">
-<ul class="org-ul">
-<li>Artisan's tools</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org44e33a1" class="outline-4">
-<h4 id="org44e33a1"><span class="section-number-4">2.3.3</span> Weapon Proficiencies</h4>
-<div class="outline-text-4" id="text-2-3-3">
-<ul class="org-ul">
-<li>Simple weapons</li>
-<li>Shortswords</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8011c29" class="outline-2">
-<h2 id="org8011c29"><span class="section-number-2">3</span> Combat</h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-orgc5a910b" class="outline-3">
-<h3 id="orgc5a910b"><span class="section-number-3">3.1</span> Defense</h3>
-<div class="outline-text-3" id="text-3-1">
-<table id="orgf3241b7" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<table id="org1655d5c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -645,156 +505,36 @@ for the JavaScript code in this tag.
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Armor Class (Unarmored)</th>
-<th scope="col" class="org-right">Initiative</th>
-<th scope="col" class="org-right">Speed (Unarmored)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">18</td>
-<td class="org-right">5</td>
-<td class="org-right">50</td>
-</tr>
-</tbody>
-</table>
-
-<ul class="org-ul">
-<li>Cloak of Protection gives +1 to Armor Class.</li>
-<li>+1 to Armor Class while in Barovia.</li>
-<li><b>Base speed:</b> 30.</li>
-<li>Unarmored speed increases as per the <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
-<li><a href="http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles">Deflect Missile</a></li>
-<li><a href="http://dnd5e.wikia.com/wiki/Monk#Evasion">Evasion</a></li>
-<li>Move across water and vertical surfaces on round.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orge68fdf2" class="outline-3">
-<h3 id="orge68fdf2"><span class="section-number-3">3.2</span> Health</h3>
-<div class="outline-text-3" id="text-3-2">
-<table id="org58b5ddb" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Hit Point Maximum</th>
-<th scope="col" class="org-right">Current Hit Points</th>
-<th scope="col" class="org-left">Temp Hit Points</th>
-<th scope="col" class="org-left">Health Potions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">97</td>
-<td class="org-right">97</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">11 (C), 1 (G), 1(S)</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div id="outline-container-orgae8a9e0" class="outline-4">
-<h4 id="orgae8a9e0"><span class="section-number-4">3.2.1</span> Hit Dice</h4>
-<div class="outline-text-4" id="text-3-2-1">
-<table id="orgbe7719a" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Type</th>
-<th scope="col" class="org-right">Number</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">1d8</td>
-<td class="org-right">8</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8d3589b" class="outline-3">
-<h3 id="org8d3589b"><span class="section-number-3">3.3</span> Weapons</h3>
-<div class="outline-text-3" id="text-3-3">
-<table id="org360be10" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right">Strength Modifier</th>
-<th scope="col" class="org-right">Dexterity Mod</th>
+<th scope="col" class="org-right">Passive Wisdom</th>
 <th scope="col" class="org-right">Proficiency Bonus</th>
+<th scope="col" class="org-right">Inspiration</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">4</td>
+<td class="org-right">14</td>
 <td class="org-right">5</td>
-<td class="org-right">4</td>
+<td class="org-right">5</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
-<ul class="org-ul">
-<li>When attacking with monk weapons or unarmed strike can use either Strength, or
-Dexterity to attack and damage.</li>
-<li>Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
-action.</li>
-<li>Ki wraps give +3 to attack and damage when attacking with monk weapons or
-unarmed strike; +3 to save DCs.</li>
-<li>Insignia of Claws gives +1 to attack and damage.</li>
-<li>Can roll a d8 in place of the normal damage of unarmed strike or monk
-weapon. This die can change with gaining of monk levels. Check martial arts
-column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
-<li>Proficient in monk weapons and unarmed strike.</li>
-<li>Minimal armor master (feat)
-<ul class="org-ul">
-<li>When you hit a creature that hasn’t taken a turn in combat yet, you deal an
-additional 1d6 damage.</li>
-<li>When you make a standing jump, the distance you cover increases by a number
-of feet equal to your Dexterity modifier.</li>
-<li>Any Initiative check result of yours that is lower than 8 + your Dexterity
-modifier is raised to that</li>
-</ul></li>
-<li>Trick or Treat.</li>
-</ul>
-
-<table id="org84978b7" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
+<div id="outline-container-org9760b03" class="outline-3">
+<h3 id="org9760b03">Combat Information</h3>
+<div class="outline-text-3" id="text-org9760b03">
+<table id="org7ca1330" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
 <col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
 
 <col  class="org-left" />
 
@@ -802,267 +542,233 @@ modifier is raised to that</li>
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">Weapons</th>
-<th scope="col" class="org-left">Proficient?</th>
-<th scope="col" class="org-right">Base Damage</th>
-<th scope="col" class="org-left">Type</th>
-<th scope="col" class="org-left">Range</th>
+<th scope="col" class="org-right">Initiative</th>
+<th scope="col" class="org-left">Armor Class</th>
+<th scope="col" class="org-left">Speed</th>
+<th scope="col" class="org-left">Current HP</th>
+<th scope="col" class="org-left">Temporary HP</th>
+<th scope="col" class="org-left">Hit Dice</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Dart</td>
-<td class="org-left">Y</td>
-<td class="org-right">1d4</td>
-<td class="org-left">Piercing</td>
-<td class="org-left">20/60</td>
+<td class="org-right">5</td>
+<td class="org-left">19 (Monk unarmored AC)</td>
+<td class="org-left">Base: 30</td>
+<td class="org-left">Max: 105</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Max: 13d8</td>
 </tr>
 
 <tr>
-<td class="org-left">Unarmed Strike</td>
-<td class="org-left">Y</td>
-<td class="org-right">1d8</td>
-<td class="org-left">Bludgeon</td>
-<td class="org-left">5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">+1 (with <a href="#orgb47dc5e">Cloak of Protection</a>)</td>
+<td class="org-left">Unarmored: 50</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Used:</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">+1 (in Barovia)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
-<p>
-Way of the Four Elements (homebrewed) allows an additional 1d10 + half monk level
-damage for an attack during the Attack action. The range is also increased to 60
-feet. The damage can be increased by spending ki points, up to a maximum of three.
-Each ki point spent increases the damage by 1d10.
-</p>
-
-<ul class="org-ul">
-<li>2 bottle of holy water.</li>
-</ul>
-</div>
 </div>
 
-<div id="outline-container-orgc818be0" class="outline-3">
-<h3 id="orgc818be0"><span class="section-number-3">3.4</span> Ki</h3>
-<div class="outline-text-3" id="text-3-4">
-<table id="org165558b" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<div id="outline-container-orgd2653ae" class="outline-4">
+<h4 id="orgd2653ae">Ki</h4>
+<div class="outline-text-4" id="text-orgd2653ae">
+<table id="org28f67f5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
+<col  class="org-left" />
 
 <col  class="org-right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">Ki Points Maximum</th>
-<th scope="col" class="org-right">Current Ki Points</th>
+<th scope="col" class="org-left">Current Ki Points</th>
 <th scope="col" class="org-right">Ki Save DC</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">12</td>
-<td class="org-right">12</td>
-<td class="org-right">15</td>
+<td class="org-left">Max: 13</td>
+<td class="org-right">17</td>
+</tr>
+
+<tr>
+<td class="org-left">+6 (with <a href="#org38605d2">Ki Straps</a>)</td>
+<td class="org-right">&#xa0;</td>
 </tr>
 </tbody>
 </table>
-
-<ul class="org-ul">
-<li><b>Ki Wraps</b> allow regaining up to six ki points in between two long rests.</li>
-<li><b>Flurry of Blows:</b> Immediately after attack, use 1 ki point to make two unarmed
-strikes as a bonus action.</li>
-<li><b>Patient Defense:</b> Use 1 ki point to take the dodge action as bonus action on
-own turn.</li>
-<li><b>Step of the Wind:</b> Use 1 ki point to disengage or dash as a bonus action on own
-turn. Jump distance is doubled for the turn.</li>
-<li><b>Primordial Wrath:</b> As an action, you can produce a huge wave of elemental energy
-in a 30-foot cone. Each creature in the 30-foot cone must make a Dexterity
-saving throw or take 2d10 damage. You can increase the damage by spending ki
-points. Each point up to a maximum of 5, increases the damage by 1d10.</li>
-<li><b>Detect Thoughts:</b> Use 2 ki points for the spell.</li>
-<li><b>Wall of Force:</b> Use 5 ki points for the spell.</li>
-</ul>
-</div>
 </div>
 </div>
 
-<div id="outline-container-orgc631a1e" class="outline-2">
-<h2 id="orgc631a1e"><span class="section-number-2">4</span> Equipment</h2>
-<div class="outline-text-2" id="text-4">
-<ul class="org-ul">
-<li>Spear</li>
-<li>Dart × 10</li>
-<li>Dungeoneer's Pack
-<ul class="org-ul">
-<li>Backpack</li>
-<li>Crowbar</li>
-<li>Hammer</li>
-<li>Pitons × 10</li>
-<li>Torches × 10</li>
-<li>Tinderbox</li>
-<li>Ration × 10 days</li>
-<li>Waterskin</li>
-<li>Hempen rope - 50 feet</li>
-</ul></li>
-<li>Uniform</li>
-<li>Horn</li>
-<li>Set of manacles</li>
-<li>Pouch</li>
-<li>+3 Ki Wraps (Requires Attunement) (C)</li>
-<li>Hat of Disguise (Requires Attunement)</li>
-<li>Blood Shortsword (Requires Attunement)</li>
-<li>Insignia of Claws</li>
-<li>Cloak of Protection (Requires Attunement) (C)</li>
-<li>Periapt of Wound Closure (With Ilia)</li>
-<li>Spellguard shield (AC 2) gives advantage on saving throws against spells and
-other magical effects. Spell attacks against you have disadvantage. (With Ilia)</li>
-<li>Bag of Holding
-<ul class="org-ul">
-<li>Eversmoking Bowl</li>
-<li>A vial of oil of Tagg-It</li>
-</ul></li>
-<li>Sending Stones</li>
-<li>Dern's Instantaneous Fortress</li>
-<li>Bead of Force</li>
-<li>Boots of Elvenkind (Gives advantage to stealth checks that rely on moving
-silently.)</li>
-<li>Drift Globe (Cast light/daylight)</li>
-<li>Ring of Warmth (C)</li>
-<li>Dust of Invisibility</li>
-<li>Censur of Commanding Air Elementals
-<ul class="org-ul">
-<li>Air Elemental:
-<ul class="org-ul">
-<li>AC - 15, HP - 90, Fly - 90ft</li>
-<li>Two slam attacks (+8 to hit, 14 bludgeoning damage eat attack),</li>
-<li>Whirlwind (DC 13, On failure 15 bludgeoning damage, flung 20ft from
-elemental in random direction.)</li>
-</ul></li>
-</ul></li>
-<li>Gem of Air Elemental</li>
-<li>Potion of Invulnerability</li>
-<li>Potion of Stoneskin</li>
-<li><a href="https://www.dnd-spells.com/spell/tensers-transformation?h=AT3felqFbI19fJ9aPx0djNer3x09L91wiMWZL3bvuxkuX3gbMdtCQ0yhwYn8co2bB10RaL3L4QeDH4XQVQ25ZIn42QkkvZwMOzkasuZW5vuCrens_imOEt4i67H-8Zj3l9Hh6B3VdHZJzfMi-Ie0">Potion of Tenser's Transformation</a></li>
-<li>Scroll of Revivify (x2)</li>
-<li>Scroll of Raise Dead (x2)</li>
-<li>600(300) gp worth of fancy clothes</li>
-<li>1000(500(250)) gp worth of books</li>
-<li>150 gp worth of silverware</li>
-<li>Keys to Valaki burgomaster's mansion</li>
-<li>Cloak of Disguise (requires attunement)</li>
-</ul>
-
-<table id="org0c0bd78" border="2" cellspacing="0" cellpadding="6" rules="all" frame="border">
+<div id="outline-container-orgac7d95e" class="outline-4">
+<h4 id="orgac7d95e">Attacks and Spellcasting</h4>
+<div class="outline-text-4" id="text-orgac7d95e">
+<table id="org32d2858" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
 <col  class="org-right" />
 
-<col  class="org-left" />
-
-<col  class="org-right" />
-
-<col  class="org-left" />
-
 <col  class="org-right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">PP</th>
-<th scope="col" class="org-left">GP</th>
-<th scope="col" class="org-right">EP</th>
-<th scope="col" class="org-left">SP</th>
-<th scope="col" class="org-right">CP</th>
+<th scope="col" class="org-right">Dex Mod</th>
+<th scope="col" class="org-right">Proficiency Bonus</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-right">1</td>
-<td class="org-left">266 (16402)</td>
-<td class="org-right">87</td>
-<td class="org-left">599 ()</td>
-<td class="org-right">231</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+</tr>
+</tbody>
+</table>
+
+<table id="org7ceaf60" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Damage</th>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">Proficient</th>
+<th scope="col" class="org-right">Range</th>
+<th scope="col" class="org-left">Other Bonus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Unarmed attack</td>
+<td class="org-right">1d8</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[X]</td>
+<td class="org-right">60</td>
+<td class="org-left">+3 to attack and damage rolls (with <a href="#org38605d2">Ki Straps</a>)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">+1 to attack and damage rolls (with <a href="#orgad31da8">Insignia of Claws</a>)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">+ half your monk level</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orged08d56" class="outline-3">
+<h3 id="orged08d56">Features and Proficiencies</h3>
+<div class="outline-text-3" id="text-orged08d56">
+<table id="orgb67f71a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Features and Traits</th>
+<th scope="col" class="org-left">Proficiencies</th>
+<th scope="col" class="org-left">Languages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Artisan's tools, Shortswords, Simple weapons</td>
+<td class="org-left">All spoken languages</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="outline-container-org01b04ed" class="outline-2">
-<h2 id="org01b04ed"><span class="section-number-2">5</span> Features</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org6b0aff1" class="outline-3">
-<h3 id="org6b0aff1"><span class="section-number-3">5.1</span> Dragonborn features</h3>
-<div class="outline-text-3" id="text-5-1">
-<ul class="org-ul">
-<li>Gold Dragon. (Argenvost has narrowed down the ancestry to 6 gold dragons.)</li>
-<li>Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
-dealing 4d6 fire damage, Dexterity save for half damage. DC  = 8 +
-Constitution Modifier + Proficiency.</li>
-<li>Resist fire damage.</li>
-</ul>
+
+<div id="outline-container-org943571f" class="outline-3">
+<h3 id="org943571f">Equipment</h3>
+<div class="outline-text-3" id="text-org943571f">
+<dl class="org-dl">
+<dt><a id="orgb47dc5e"></a> Cloak of Protection</dt><dd>Wondrous item,
+uncommon. Requires attunement. You gain a +1 bonus to AC and saving throws
+while you wear this cloak.</dd>
+
+<dt><a id="org38605d2"></a> Ki Straps of the Grandmaster</dt><dd>Wondrous item,
+very rare. Requires attunement by a monk. When wrapped around both hands,
+these straps grant a +3 bonus to attack and damage rolls of your unarmed
+attacks and to the saving throw DCs of your Monk special abilities (like
+Stunning Strike, Martial Arts Techniques, Shadow and Elemental Spells and so
+on). In addition, you can regain 6 ki points as an action while wearing these
+straps. You can't use this property again until you finish a long rest.</dd>
+
+<dt><a id="orgad31da8"></a> Insignia of Claws</dt><dd>Wondrous item, uncommon. The jewels
+in the insignia of the Cult of the Dragon flare with purple light when you
+enter combat, empowering your natural fists or natural weapons. While wearing
+the insignia you gain a +1 bonus to the attack rolls and the damage rolls you
+make with unarmed strikes and natural weapons. Such attacks are considered to
+be magical.</dd>
+</dl>
 </div>
 </div>
 
-<div id="outline-container-org19e5c16" class="outline-3">
-<h3 id="org19e5c16"><span class="section-number-3">5.2</span> City Watch features</h3>
-<div class="outline-text-3" id="text-5-2">
-<ul class="org-ul">
-<li>Have a knack for finding crime dens and constabularies.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org2fb9bef" class="outline-3">
-<h3 id="org2fb9bef"><span class="section-number-3">5.3</span> Monk features</h3>
-<div class="outline-text-3" id="text-5-3">
-<ul class="org-ul">
-<li>Wisdom modifier added to AC when unarmoured, and not carrying a shield.</li>
-<li>Can use dexterity for attack and damage when unarmed or using monk
-weapons.</li>
-<li>Can roll a d8 in place of the normal damage of unarmed strike or monk
-weapon. This die can change with gaining of monk levels. Check martial arts
-column of <a href="http://engl393-dnd5th.wikia.com/wiki/Monk">Monk Leveling Table</a>.</li>
-<li>Can make an unarmed attack as a bonus action when unarmed or using monk
-weapons.</li>
-<li><a href="http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall">Slow Fall</a>.</li>
-<li><a href="http://dnd5e.wikia.com/wiki/Monk#Stillness_of_Mind">Stillness of Mind</a>.</li>
-<li>Cast <a href="https://www.dndbeyond.com/spells/control-flames">Control Flames</a>, <a href="https://www.dndbeyond.com/spells/gust">Gust</a>, <a href="https://www.dndbeyond.com/spells/mold-earth">Mold Earth</a>, and <a href="https://www.dndbeyond.com/spells/shape-water">Shape Water</a> as cantrips. Spend 1 ki
-point to increase their area of effect to a number of 5 foot cubes equal to
-your monk level.</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf5a65d6" class="outline-2">
-<h2 id="orgf5a65d6"><span class="section-number-2">6</span> Taroka Cards</h2>
-<div class="outline-text-2" id="text-6">
-<ul class="org-ul">
-<li>Knowledge of the ancient will help you better understand the enemy. -
-Swashbuckler. - Skeleton of a deadly warrior lying on a bed of stone flanked
-by gargoyles.</li>
-<li>Powerful force for good and protection. Holy symbol of great hope. -
-Mercenary - Thing you seek lies with the dead under mountains of gold coins.</li>
-<li>Power and Strength. Weapon of Vengeance. A sword of sunlight. - Transmuter -
-Go to a place of dizzying heights where the stone itself is alive.</li>
-<li>Sheds light on who will help you in the battle against darkness. -
-Broken One - Your greatest ally will be a wizard. His mind is broken but his
-spells are strong.</li>
-<li>Your enemy is a creature of darknes. Immortal. - Marionette - Look to great
-heights. Find the beating heart of the castle. He waits nearby.</li>
-
-<li>Great destiny - silvery staircase - Tansen.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org3600cf9" class="outline-2">
-<h2 id="org3600cf9"><span class="section-number-2">7</span> Backstory</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org4e3709d" class="outline-2">
+<h2 id="org4e3709d">Backstory</h2>
+<div class="outline-text-2" id="text-org4e3709d">
 <p>
 "<i>Tansen, Taaannnsennn, &#x2026;." a oddly familiar voice called him, amidst all the</i>
 <i>din. He could not quite place where it was coming from, nor whose voice it</i>
@@ -1129,12 +835,7 @@ seven. There was no way he was going to be late today too. He got out of bed,
 and headed downstairs. Maybe he will stop by the library at the new monastery
 after work. The manuscripts might have some answers.
 </p>
-</div>
-</div>
 
-<div id="outline-container-orgc6ad671" class="outline-2">
-<h2 id="orgc6ad671"><span class="section-number-2">8</span> Dark Gifts</h2>
-<div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>Seriach (x)</li>
 <li>Yrrga (x)</li>
@@ -1144,9 +845,9 @@ after work. The manuscripts might have some answers.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: soham</p>
-<p class="date">Created: 2019-12-20 Fri 03:10</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: Soham Pal</p>
+<p class="date">Created: 2020-09-27 Sun 02:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

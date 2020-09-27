@@ -1,315 +1,326 @@
-#+TITLE: Tansen
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
-#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+#+TITLE: Tansen Dragonfistface
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS: num:nil
 
-* Basic Information
+#+NAME: BASIC
+| Race       | Class | Level | Background | Alignment   | Experince Points |
+|------------+-------+-------+------------+-------------+------------------|
+| Dragonborn | Monk  |    13 | City Watch | Lawful Good |                  |
 
-#+NAME: BASICINFO
-#+ATTR_HTML: :border 2 :rules all :frame border
-| Race       | Class | Background | Alignment   | Level |    XP |
-|------------+-------+------------+-------------+-------+-------|
-| Dragonborn | Monk  | City Watch | Lawful Good |    12 | 16857 |
+** Attributes and Skills
 
-* Attributes and Skills
+#+NAME: ATTRIBUTES
+| Attribute | Value | Mod | Save? | Skills          | Proficient? |
+|-----------+-------+-----+-------+-----------------+-------------|
+| STR       |    18 |   4 | [X]   | Athletics       | [X]         |
+|           |       |     |       |                 |             |
+|-----------+-------+-----+-------+-----------------+-------------|
+| DEX       |    20 |   5 | [X]   | Acrobatics      |             |
+|           |       |     |       | Stealth         | [X]         |
+|-----------+-------+-----+-------+-----------------+-------------|
+| CON       |    16 |   3 |       |                 |             |
+|-----------+-------+-----+-------+-----------------+-------------|
+| INT       |    11 |   0 |       | Arcana          |             |
+|           |       |     |       | History         | [X]         |
+|           |       |     |       | Investigation   |             |
+|           |       |     |       | Nature          |             |
+|           |       |     |       | Religion        |             |
+|-----------+-------+-----+-------+-----------------+-------------|
+| WIS       |    19 |   4 |       | Animal handling |             |
+|           |       |     |       | Insight         | [X]         |
+|           |       |     |       | Medicine        |             |
+|           |       |     |       | Perception      |             |
+|           |       |     |       | Survival        |             |
+|-----------+-------+-----+-------+-----------------+-------------|
+| CHA       |    16 |   3 |       | Deception       |             |
+|           |       |     |       | Intimidation    |             |
+|           |       |     |       | Performance     |             |
+|           |       |     |       | Persuasion      |             |
+#+TBLFM: @2$3=(floor (($2-10)/2))::@4$3=(floor (($2-10)/2))::@6$3=(floor (($2-10)/2))::@7$3=(floor (($2-10)/2))::@12$3=(floor (($2-10)/2))::@17$3=(floor (($2-10)/2))
 
-#+NAME: Attributes
-#+ATTR_HTML: :border 2 :rules all :frame border
-|              | Score | Modifier |
-|--------------+-------+----------|
-| Strength     |    18 |        4 |
-| Dexterity    |    20 |        5 |
-| Constitution |    16 |        3 |
-| Intelligence |    11 |        0 |
-| Wisdom       |    17 |        3 |
-| Charisma     |    16 |        3 |
-#+TBLFM: $3=floor(($2-10)/2)
+- +1 bonus to saving throws with [[Cloak of Protection][Cloak of Protection]].
+- +3 bonus to saving throws with [[Ki Straps of the Grandmaster][Ki Straps]].
 
-#+NAME: Prof
-#+ATTR_HTML: :border 2 :rules all :frame border
-| Initiative | Proficiency |
-|------------+-------------|
-|          4 |           4 |
+#+NAME: PASSIVE_ATTRIBUTES
+| Passive Wisdom | Proficiency Bonus | Inspiration |
+|----------------+-------------------+-------------|
+|             14 |                 5 |           5 |
+#+TBLFM: @2$1=(remote(ATTRIBUTES, @12$3) + 10)
 
-#+NAME: Ins
-#+ATTR_HTML: :border 2 :rules all :frame border
-| Inspiration Points |
-|-------------------------------|
-|                              5|
+** Combat Information
+#+NAME: PASSIVE_COMBAT
+| Initiative | Armor Class                   | Speed         | Current HP | Temporary HP | Hit Dice  |
+|------------+-------------------------------+---------------+------------+--------------+-----------|
+|          5 | 19 (Monk unarmored AC)        | Base: 30      | Max: 105   |              | Max: 13d8 |
+|            | +1 (with [[Cloak of Protection][Cloak of Protection]]) | Unarmored: 50 |            |              | Used:     |
+|            | +1 (in Barovia)               |               |            |              |           |
+#+TBLFM: @2$1=(remote(ATTRIBUTES, @4$3))
 
-#+NAME: Dow
-#+ATTR_HTML: :border 2 :rules all :frame border
-| Downtime Hours |
-|-----------------------------|
-|                        120 |
+*** Ki
+#+NAME: KI
+| Current Ki Points   | Ki Save DC |
+|---------------------+------------|
+| Max: 13             |         17 |
+| +6 (with [[Ki Straps of the Grandmaster][Ki Straps]]) |            |
+#+TBLFM: @2$2=(remote(ATTRIBUTES, @12$3) + remote(PASSIVE_ATTRIBUTES, @2$2) + 8)
 
-** Saving Throws
+*** Attacks and Spellcasting
+#+NAME: BONUS
+| Dex Mod | Proficiency Bonus |
+|---------+-------------------|
+|       5 |                 5 |
+#+TBLFM: @2$1=(remote(ATTRIBUTES, @4$3))::@2$2=(remote(PASSIVE_ATTRIBUTES, @2$2))
 
-- Strength
-- Dexterity
+#+NAME: ATTACKS
+| Name           | Damage | Type | Proficient | Range | Other Bonus                                            |
+|----------------+--------+------+------------+-------+--------------------------------------------------------|
+| Unarmed attack |    1d8 |      | [X]        |    60 | +3 to attack and damage rolls (with [[Ki Straps of the Grandmaster][Ki Straps]])         |
+|                |        |      |            |       | +1 to attack and damage rolls (with [[Insignia of Claws][Insignia of Claws]]) |
+|                |        |      |            |       | + half your monk level                                 |
+|----------------+--------+------+------------+-------+--------------------------------------------------------|
+|                |        |      |            |       |                                                        |
 
-** Skills
 
-#+NAME: Skills
-#+ATTR_HTML: :border 2 :frame border
-|                 | Attribute    | Proficient? |
-|-----------------+--------------+-------------|
-| Athletics       | Strength     | Y           |
-|-----------------+--------------+-------------|
-| Acrobatics      | Dexterity    |             |
-| Sleight of Hand |              |             |
-| Stealth         |              | Y           |
-|-----------------+--------------+-------------|
-| Aracana         | Intelligence |             |
-| History         |              | Y           |
-| Investigation   |              |             |
-| Nature          |              |             |
-| Religion        |              |             |
-|-----------------+--------------+-------------|
-| Animal Handling | Wisdom       |             |
-| Insight         |              | Y           |
-| Medicine        |              |             |
-| Perception      |              |             |
-| Survival        |              |             |
-|-----------------+--------------+-------------|
-| Deception       | Charisma     |             |
-| Intimidation    |              |             |
-| Performance     |              |             |
-| Persuasion      |              |             |
+** Features and Proficiencies
+#+NAME: RP
+| Features and Traits | Proficiencies                                | Languages            |
+|---------------------+----------------------------------------------+----------------------|
+|                     | Artisan's tools, Shortswords, Simple weapons | All spoken languages |
 
-** Other Proficienies and Languages
-*** Languages Known
 
-- Draconic
-- Common
-- Dwarvish
-- Orc
+** Equipment
 
-*** Tool Proficiencies
+- <<Cloak of Protection>> Cloak of Protection :: Wondrous item,
+  uncommon. Requires attunement. You gain a +1 bonus to AC and saving throws
+  while you wear this cloak.
 
-- Artisan's tools
+- <<Ki Straps of the Grandmaster>> Ki Straps of the Grandmaster :: Wondrous item,
+  very rare. Requires attunement by a monk. When wrapped around both hands,
+  these straps grant a +3 bonus to attack and damage rolls of your unarmed
+  attacks and to the saving throw DCs of your Monk special abilities (like
+  Stunning Strike, Martial Arts Techniques, Shadow and Elemental Spells and so
+  on). In addition, you can regain 6 ki points as an action while wearing these
+  straps. You can't use this property again until you finish a long rest.
 
-*** Weapon Proficiencies
+- <<Insignia of Claws>> Insignia of Claws :: Wondrous item, uncommon. The jewels
+  in the insignia of the Cult of the Dragon flare with purple light when you
+  enter combat, empowering your natural fists or natural weapons. While wearing
+  the insignia you gain a +1 bonus to the attack rolls and the damage rolls you
+  make with unarmed strikes and natural weapons. Such attacks are considered to
+  be magical.
 
-- Simple weapons
-- Shortswords
+# * Combat * Defense
 
-* Combat
-** Defense
+# #+NAME: Defense
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | Armor Class (Unarmored) | Initiative | Speed (Unarmored) |
+# |-------------------------+------------+-------------------|
+# |                      18 |          5 |                50 |
+# #+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
 
-#+NAME: Defense
-#+ATTR_HTML: :border 2 :frame border :rules all
-| Armor Class (Unarmored) | Initiative | Speed (Unarmored) |
-|-------------------------+------------+-------------------|
-|                      18 |          5 |                50 |
-#+TBLFM: @2$1=10+remote(Attributes,@3$3)+remote(Attributes,@6$3)
+# - Cloak of Protection gives +1 to Armor Class.
+# - +1 to Armor Class while in Barovia.
+# - *Base speed:* 30.
+# - Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+# - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
+# - [[http://dnd5e.wikia.com/wiki/Monk#Evasion][Evasion]]
+# - Move across water and vertical surfaces on ground.
 
-- Cloak of Protection gives +1 to Armor Class.
-- +1 to Armor Class while in Barovia.
-- *Base speed:* 30.
-- Unarmored speed increases as per the [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
-- [[http://engl393-dnd5th.wikia.com/wiki/Monk#Deflect_Missiles][Deflect Missile]]
-- [[http://dnd5e.wikia.com/wiki/Monk#Evasion][Evasion]]
-- Move across water and vertical surfaces on ground.
+# ** Health
 
-** Health
+# #+NAME: Health
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | Hit Point Maximum | Current Hit Points | Temp Hit Points | Health Potions      |
+# |-------------------+--------------------+-----------------+---------------------|
+# |                97 |                 97 |                 | 11 (C), 1 (G), 1(S) |
 
-#+NAME: Health
-#+ATTR_HTML: :border 2 :frame border :rules all
-| Hit Point Maximum | Current Hit Points | Temp Hit Points | Health Potions      |
-|-------------------+--------------------+-----------------+---------------------|
-|                97 |                 97 |                 | 11 (C), 1 (G), 1(S) |
+# *** Hit Dice
 
-*** Hit Dice
+# #+NAME: HD
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | Type | Number |
+# |------+--------|
+# |  1d8 |      8 |
+# #+TBLFM: @2$2=remote(BASICINFO,@2$5)
 
-#+NAME: HD
-#+ATTR_HTML: :border 2 :frame border :rules all
-| Type | Number |
-|------+--------|
-|  1d8 |      8 |
-#+TBLFM: @2$2=remote(BASICINFO,@2$5)
+# ** Weapons
 
-** Weapons
+# #+NAME: ImpMod
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | Strength Modifier | Dexterity Mod | Proficiency Bonus |
+# |-------------------+---------------+-------------------|
+# |                 4 |             5 |                 4 |
+# #+TBLFM: @2$1=remote(Attributes,@2$3)::@2$2=remote(Attributes,@3$3)::@2$3=remote(Prof,@2$2)
 
-#+NAME: ImpMod
-#+ATTR_HTML: :border 2 :frame border :rules all
-| Strength Modifier | Dexterity Mod | Proficiency Bonus |
-|-------------------+---------------+-------------------|
-|                 4 |             5 |                 4 |
-#+TBLFM: @2$1=remote(Attributes,@2$3)::@2$2=remote(Attributes,@3$3)::@2$3=remote(Prof,@2$2)
+# - When attacking with monk weapons or unarmed strike can use either Strength, or
+#   Dexterity to attack and damage.
+# - Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
+#   action.
+# - Ki wraps give +3 to attack and damage when attacking with monk weapons or
+#   unarmed strike; +3 to save DCs.
+# - Insignia of Claws gives +1 to attack and damage.
+# - Can roll a d8 in place of the normal damage of unarmed strike or monk
+#   weapon. This die can change with gaining of monk levels. Check martial arts
+#   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+# - Proficient in monk weapons and unarmed strike.
+# - Minimal armor master (feat)
+#   + When you hit a creature that hasn’t taken a turn in combat yet, you deal an
+#     additional 1d6 damage.
+#   + When you make a standing jump, the distance you cover increases by a number
+#     of feet equal to your Dexterity modifier.
+#   + Any Initiative check result of yours that is lower than 8 + your Dexterity
+#     modifier is raised to that
+# - Trick or Treat.
 
-- When attacking with monk weapons or unarmed strike can use either Strength, or
-  Dexterity to attack and damage.
-- Attacking with unarmed strike or monk weapons allows unarmed strike as a bonus
-  action.
-- Ki wraps give +3 to attack and damage when attacking with monk weapons or
-  unarmed strike; +3 to save DCs.
-- Insignia of Claws gives +1 to attack and damage.
-- Can roll a d8 in place of the normal damage of unarmed strike or monk
-  weapon. This die can change with gaining of monk levels. Check martial arts
-  column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
-- Proficient in monk weapons and unarmed strike.
-- Minimal armor master (feat)
-  + When you hit a creature that hasn’t taken a turn in combat yet, you deal an
-    additional 1d6 damage.
-  + When you make a standing jump, the distance you cover increases by a number
-    of feet equal to your Dexterity modifier.
-  + Any Initiative check result of yours that is lower than 8 + your Dexterity
-    modifier is raised to that
-- Trick or Treat.
+# #+NAME: Weapons
+# #+ATTR_HTML: :border 2 :frame border
+# | Weapons             | Proficient? | Base Damage     | Type     | Range |
+# |---------------------+-------------+-----------------+----------+-------|
+# | Dart                | Y           | 1d4             | Piercing | 20/60 |
+# | Unarmed Strike      | Y           | 1d8             | Bludgeon | 5     |
+# #+TBLFM: @4$2=remote(Attributes,@3$3)
+# Way of the Four Elements (homebrewed) allows an additional 1d10 + half monk level
+# damage for an attack during the Attack action. The range is also increased to 60
+# feet. The damage can be increased by spending ki points, up to a maximum of three.
+# Each ki point spent increases the damage by 1d10.
 
-#+NAME: Weapons
-#+ATTR_HTML: :border 2 :frame border
-| Weapons             | Proficient? | Base Damage     | Type     | Range |
-|---------------------+-------------+-----------------+----------+-------|
-| Dart                | Y           | 1d4             | Piercing | 20/60 |
-| Unarmed Strike      | Y           | 1d8             | Bludgeon | 5     |
-#+TBLFM: @4$2=remote(Attributes,@3$3)
-Way of the Four Elements (homebrewed) allows an additional 1d10 + half monk level
-damage for an attack during the Attack action. The range is also increased to 60
-feet. The damage can be increased by spending ki points, up to a maximum of three.
-Each ki point spent increases the damage by 1d10.
+# - 2 bottle of holy water.
 
-- 2 bottle of holy water.
+# ** Ki
 
-** Ki
+# #+NAME: Ki
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | Ki Points Maximum | Current Ki Points | Ki Save DC |
+# |-------------------+-------------------+------------|
+# |                12 |                12 |         15 |
+# #+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
 
-#+NAME: Ki
-#+ATTR_HTML: :border 2 :frame border :rules all
-| Ki Points Maximum | Current Ki Points | Ki Save DC |
-|-------------------+-------------------+------------|
-|                12 |                12 |         15 |
-#+TBLFM: @2$1=remote(BASICINFO,@2$5)::@2$3=8+remote(Prof,@2$2)+remote(Attributes,@6$3)
+# - *Ki Wraps* allow regaining up to six ki points in between two long rests.
+# - *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
+#   strikes as a bonus action.
+# - *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
+#   own turn.
+# - *Step of the Wind:* Use 1 ki point to disengage or dash as a bonus action on own
+#   turn. Jump distance is doubled for the turn.
+# - *Primordial Wrath:* As an action, you can produce a huge wave of elemental energy
+#   in a 30-foot cone. Each creature in the 30-foot cone must make a Dexterity
+#   saving throw or take 2d10 damage. You can increase the damage by spending ki
+#   points. Each point up to a maximum of 5, increases the damage by 1d10.
+# - *Detect Thoughts:* Use 2 ki points for the spell.
+# - *Wall of Force:* Use 5 ki points for the spell.
 
-- *Ki Wraps* allow regaining up to six ki points in between two long rests.
-- *Flurry of Blows:* Immediately after attack, use 1 ki point to make two unarmed
-  strikes as a bonus action.
-- *Patient Defense:* Use 1 ki point to take the dodge action as bonus action on
-  own turn.
-- *Step of the Wind:* Use 1 ki point to disengage or dash as a bonus action on own
-  turn. Jump distance is doubled for the turn.
-- *Primordial Wrath:* As an action, you can produce a huge wave of elemental energy
-  in a 30-foot cone. Each creature in the 30-foot cone must make a Dexterity
-  saving throw or take 2d10 damage. You can increase the damage by spending ki
-  points. Each point up to a maximum of 5, increases the damage by 1d10.
-- *Detect Thoughts:* Use 2 ki points for the spell.
-- *Wall of Force:* Use 5 ki points for the spell.
+# * Equipment
 
-* Equipment
+# - Spear
+# - Dart × 10
+# - Dungeoneer's Pack
+#   + Backpack
+#   + Crowbar
+#   + Hammer
+#   + Pitons × 10
+#   + Torches × 10
+#   + Tinderbox
+#   + Ration × 10 days
+#   + Waterskin
+#   + Hempen rope - 50 feet
+# - Uniform
+# - Horn
+# - Set of manacles
+# - Pouch
+# - +3 Ki Wraps (Requires Attunement) (C)
+# - Hat of Disguise (Requires Attunement)
+# - Blood Shortsword (Requires Attunement)
+# - Insignia of Claws
+# - Cloak of Protection (Requires Attunement) (C)
+# - Periapt of Wound Closure (With Ilia)
+# - Spellguard shield (AC 2) gives advantage on saving throws against spells and
+#   other magical effects. Spell attacks against you have disadvantage. (With Ilia)
+# - Bag of Holding
+#   + Eversmoking Bowl
+#   + A vial of oil of Tagg-It
+# - Sending Stones
+# - Dern's Instantaneous Fortress
+# - Bead of Force
+# - Boots of Elvenkind (Gives advantage to stealth checks that rely on moving
+#   silently.)
+# - Drift Globe (Cast light/daylight)
+# - Ring of Warmth (C)
+# - Dust of Invisibility
+# - Censur of Commanding Air Elementals
+#   + Air Elemental:
+#     - AC - 15, HP - 90, Fly - 90ft
+#     - Two slam attacks (+8 to hit, 14 bludgeoning damage eat attack),
+#     - Whirlwind (DC 13, On failure 15 bludgeoning damage, flung 20ft from
+#       elemental in random direction.)
+# - Gem of Air Elemental
+# - Potion of Invulnerability
+# - Potion of Stoneskin
+# - [[https://www.dnd-spells.com/spell/tensers-transformation?h=AT3felqFbI19fJ9aPx0djNer3x09L91wiMWZL3bvuxkuX3gbMdtCQ0yhwYn8co2bB10RaL3L4QeDH4XQVQ25ZIn42QkkvZwMOzkasuZW5vuCrens_imOEt4i67H-8Zj3l9Hh6B3VdHZJzfMi-Ie0][Potion of Tenser's Transformation]]
+# - Scroll of Revivify (x2)
+# - Scroll of Raise Dead (x2)
+# - 600(300) gp worth of fancy clothes
+# - 1000(500(250)) gp worth of books
+# - 150 gp worth of silverware
+# - Keys to Valaki burgomaster's mansion
+# - Cloak of Disguise (requires attunement)
 
-- Spear
-- Dart × 10
-- Dungeoneer's Pack
-  + Backpack
-  + Crowbar
-  + Hammer
-  + Pitons × 10
-  + Torches × 10
-  + Tinderbox
-  + Ration × 10 days
-  + Waterskin
-  + Hempen rope - 50 feet
-- Uniform
-- Horn
-- Set of manacles
-- Pouch
-- +3 Ki Wraps (Requires Attunement) (C)
-- Hat of Disguise (Requires Attunement)
-- Blood Shortsword (Requires Attunement)
-- Insignia of Claws
-- Cloak of Protection (Requires Attunement) (C)
-- Periapt of Wound Closure (With Ilia)
-- Spellguard shield (AC 2) gives advantage on saving throws against spells and
-  other magical effects. Spell attacks against you have disadvantage. (With Ilia)
-- Bag of Holding
-  + Eversmoking Bowl
-  + A vial of oil of Tagg-It
-- Sending Stones
-- Dern's Instantaneous Fortress
-- Bead of Force
-- Boots of Elvenkind (Gives advantage to stealth checks that rely on moving
-  silently.)
-- Drift Globe (Cast light/daylight)
-- Ring of Warmth (C)
-- Dust of Invisibility
-- Censur of Commanding Air Elementals
-  + Air Elemental:
-    - AC - 15, HP - 90, Fly - 90ft
-    - Two slam attacks (+8 to hit, 14 bludgeoning damage eat attack),
-    - Whirlwind (DC 13, On failure 15 bludgeoning damage, flung 20ft from
-      elemental in random direction.)
-- Gem of Air Elemental
-- Potion of Invulnerability
-- Potion of Stoneskin
-- [[https://www.dnd-spells.com/spell/tensers-transformation?h=AT3felqFbI19fJ9aPx0djNer3x09L91wiMWZL3bvuxkuX3gbMdtCQ0yhwYn8co2bB10RaL3L4QeDH4XQVQ25ZIn42QkkvZwMOzkasuZW5vuCrens_imOEt4i67H-8Zj3l9Hh6B3VdHZJzfMi-Ie0][Potion of Tenser's Transformation]]
-- Scroll of Revivify (x2)
-- Scroll of Raise Dead (x2)
-- 600(300) gp worth of fancy clothes
-- 1000(500(250)) gp worth of books
-- 150 gp worth of silverware
-- Keys to Valaki burgomaster's mansion
-- Cloak of Disguise (requires attunement)
+# #+NAME: Coin
+# #+ATTR_HTML: :border 2 :frame border :rules all
+# | PP | GP         | EP | SP     |  CP |
+# |----+------------+----+--------+-----|
+# |  1 | 266 (16402) | 87 | 599 () | 231 |
 
-#+NAME: Coin
-#+ATTR_HTML: :border 2 :frame border :rules all
-| PP | GP         | EP | SP     |  CP |
-|----+------------+----+--------+-----|
-|  1 | 266 (16402) | 87 | 599 () | 231 |
+# * Features
+# ** Dragonborn features
 
-* Features
-** Dragonborn features
+# - Gold Dragon. (Argenvost has narrowed down the ancestry to 6 gold dragons.)
+# - Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
+#   dealing 4d6 fire damage, Dexterity save for half damage. DC  = 8 +
+#   Constitution Modifier + Proficiency.
+# - Resist fire damage.
 
-- Gold Dragon. (Argenvost has narrowed down the ancestry to 6 gold dragons.)
-- Draconic Ancestry: Breathe a 15 feet cone of fire (once between rests),
-  dealing 4d6 fire damage, Dexterity save for half damage. DC  = 8 +
-  Constitution Modifier + Proficiency.
-- Resist fire damage.
+# ** City Watch features
 
-** City Watch features
+# - Have a knack for finding crime dens and constabularies.
 
-- Have a knack for finding crime dens and constabularies.
+# ** Monk features
 
-** Monk features
+# - Wisdom modifier added to AC when unarmoured, and not carrying a shield.
+# - Can use dexterity for attack and damage when unarmed or using monk
+#   weapons.
+# - Can roll a d8 in place of the normal damage of unarmed strike or monk
+#   weapon. This die can change with gaining of monk levels. Check martial arts
+#   column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
+# - Can make an unarmed attack as a bonus action when unarmed or using monk
+#   weapons.
+# - [[http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall][Slow Fall]].
+# - [[http://dnd5e.wikia.com/wiki/Monk#Stillness_of_Mind][Stillness of Mind]].
+# - Cast [[https://www.dndbeyond.com/spells/control-flames][Control Flames]], [[https://www.dndbeyond.com/spells/gust][Gust]], [[https://www.dndbeyond.com/spells/mold-earth][Mold Earth]], and [[https://www.dndbeyond.com/spells/shape-water][Shape Water]] as cantrips. Spend 1 ki
+#   point to increase their area of effect to a number of 5 foot cubes equal to
+#   your monk level.
 
-- Wisdom modifier added to AC when unarmoured, and not carrying a shield.
-- Can use dexterity for attack and damage when unarmed or using monk
-  weapons.
-- Can roll a d8 in place of the normal damage of unarmed strike or monk
-  weapon. This die can change with gaining of monk levels. Check martial arts
-  column of [[http://engl393-dnd5th.wikia.com/wiki/Monk][Monk Leveling Table]].
-- Can make an unarmed attack as a bonus action when unarmed or using monk
-  weapons.
-- [[http://engl393-dnd5th.wikia.com/wiki/Monk#Slow_Fall][Slow Fall]].
-- [[http://dnd5e.wikia.com/wiki/Monk#Stillness_of_Mind][Stillness of Mind]].
-- Cast [[https://www.dndbeyond.com/spells/control-flames][Control Flames]], [[https://www.dndbeyond.com/spells/gust][Gust]], [[https://www.dndbeyond.com/spells/mold-earth][Mold Earth]], and [[https://www.dndbeyond.com/spells/shape-water][Shape Water]] as cantrips. Spend 1 ki
-  point to increase their area of effect to a number of 5 foot cubes equal to
-  your monk level.
+# * Taroka Cards
 
-* Taroka Cards
+# - Knowledge of the ancient will help you better understand the enemy. -
+#   Swashbuckler. - Skeleton of a deadly warrior lying on a bed of stone flanked
+#   by gargoyles.
+# - Powerful force for good and protection. Holy symbol of great hope. -
+#   Mercenary - Thing you seek lies with the dead under mountains of gold coins.
+# - Power and Strength. Weapon of Vengeance. A sword of sunlight. - Transmuter -
+#   Go to a place of dizzying heights where the stone itself is alive.
+# - Sheds light on who will help you in the battle against darkness. -
+#   Broken One - Your greatest ally will be a wizard. His mind is broken but his
+#   spells are strong.
+# - Your enemy is a creature of darknes. Immortal. - Marionette - Look to great
+#   heights. Find the beating heart of the castle. He waits nearby.
 
-- Knowledge of the ancient will help you better understand the enemy. -
-  Swashbuckler. - Skeleton of a deadly warrior lying on a bed of stone flanked
-  by gargoyles.
-- Powerful force for good and protection. Holy symbol of great hope. -
-  Mercenary - Thing you seek lies with the dead under mountains of gold coins.
-- Power and Strength. Weapon of Vengeance. A sword of sunlight. - Transmuter -
-  Go to a place of dizzying heights where the stone itself is alive.
-- Sheds light on who will help you in the battle against darkness. -
-  Broken One - Your greatest ally will be a wizard. His mind is broken but his
-  spells are strong.
-- Your enemy is a creature of darknes. Immortal. - Marionette - Look to great
-  heights. Find the beating heart of the castle. He waits nearby.
-
-- Great destiny - silvery staircase - Tansen.
+# - Great destiny - silvery staircase - Tansen.
 
 * Backstory
 
 #+INCLUDE: "./backstory.org"
 
-* Dark Gifts
+# * Dark Gifts
 
 - Seriach (x)
 - Yrrga (x)
