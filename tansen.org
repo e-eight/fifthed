@@ -322,6 +322,6 @@
 
 # * Dark Gifts
 
-- Seriach (x)
-- Yrrga (x)
-- Khirad (x)
+# - Seriach (x)
+# - Yrrga (x)
+# - Khirad (x)
